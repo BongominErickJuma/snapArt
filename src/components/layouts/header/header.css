@@ -1,0 +1,223 @@
+/* Dropdown menus */
+.dropdown-menu {
+  border-radius: 4px;
+  padding: 10px 0;
+  animation-name: dropdown-animate;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  background-color: var(--background-color-deep-hover);
+  color: var(--surface-color);
+}
+
+.profile li > span {
+  color: var(--accent-color);
+}
+.dropdown-menu .dropdown-header {
+  font-size: 15px;
+  padding: 10px 25px;
+}
+
+.dropdown-menu .dropdown-header h6 {
+  color: var(--surface-color) !important;
+}
+
+.dropdown-menu .dropdown-divider {
+  color: var(--background-color);
+  margin: 0;
+}
+
+.dropdown-menu .dropdown-item {
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: 0.3s;
+  background-color: var(--background-color-deep-hover);
+  color: var(--surface-color);
+}
+
+.dropdown-menu .dropdown-item i {
+  margin-right: 10px;
+  font-size: 18px;
+  line-height: 0;
+  color: var(--surface-color);
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: var(--background-color-deep-hover);
+}
+
+@media (min-width: 768px) {
+  .dropdown-menu-arrow::before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background: var(--background-color-deep-hover);
+    position: absolute;
+    top: -7px;
+    right: 20px;
+    transform: rotate(45deg);
+    border-top: 1px solid var(--background-color-deep-hover);
+    border-left: 1px solid var(--background-color-deep-hover);
+  }
+}
+
+@keyframes dropdown-animate {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+  0% {
+    opacity: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+    # Header
+    --------------------------------------------------------------*/
+.logo {
+  line-height: 1;
+}
+
+.logo img {
+  max-height: 26px;
+  margin-right: 6px;
+}
+
+.logo span {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.header {
+  transition: all 0.3s;
+
+  height: 60px;
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.header .toggle-sidebar-btn {
+  font-size: 32px;
+  padding-left: 10px;
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+        # Header Nav
+        --------------------------------------------------------------*/
+.header-nav ul {
+  list-style: none;
+}
+
+.header-nav > ul {
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav .nav-icon {
+  font-size: 22px;
+  color: var(--accent-color);
+  margin-right: 25px;
+  position: relative;
+}
+
+.header-nav .nav-profile {
+  color: var(--accent-color);
+}
+
+.header-nav .nav-profile img {
+  max-height: 36px;
+}
+
+.header-nav .nav-profile span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header-nav .badge-number {
+  position: absolute;
+  inset: -2px -5px auto auto;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 3px 6px;
+}
+
+.header-nav .notifications {
+  inset: 8px -15px auto auto !important;
+}
+
+.header-nav .notifications .dropdown-header {
+  color: var(--surface-color);
+}
+
+.header-nav .notifications .notification-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  transition: 0.3s;
+}
+
+.header-nav .notifications .notification-item i {
+  margin: 0 20px 0 10px;
+  font-size: 24px;
+}
+
+.header-nav .notifications .notification-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.header-nav .notifications .notification-item p {
+  font-size: 13px;
+  margin-bottom: 3px;
+  color: var(--default-color);
+}
+.header-nav .notifications .notification-item blockquote {
+  font-size: 13px;
+  margin-bottom: 3px;
+  color: var(--accent-color);
+  font-family: var(--font-quotes);
+}
+
+.header-nav .notifications .notification-item:hover {
+  background-color: var(--background-color);
+}
+
+.header-nav .profile {
+  min-width: 240px;
+  padding-bottom: 0;
+  top: 8px !important;
+}
+
+.header-nav .profile .dropdown-header h6 {
+  font-size: 18px;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--background-color-deep-hover);
+}
+
+.header-nav .profile .dropdown-header span {
+  font-size: 14px;
+}
+
+.header-nav .profile .dropdown-item {
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.header-nav .profile .dropdown-item i {
+  margin-right: 10px;
+  font-size: 18px;
+  line-height: 0;
+}
+
+.header-nav .profile .dropdown-item:hover {
+  background-color: var(--background-color);
+}

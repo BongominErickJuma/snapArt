@@ -1,0 +1,157 @@
+/*--------------------------------------------------------------
+    # Sidebar
+    --------------------------------------------------------------*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  z-index: 996;
+  transition: all 0.3s;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
+  background-color: var(--background-color-deep);
+  border-right: 1px solid var(--surface-color);
+}
+
+@media (min-width: 1200px) {
+  #main,
+  #header,
+  #footer {
+    margin-left: 220px;
+  }
+}
+
+.sidebar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav .nav-item {
+  margin-bottom: 5px;
+}
+
+.sidebar-nav .nav-link .bi-chevron-down {
+  margin-right: 0;
+  transform: rotate(-90deg);
+  transition: transform 0.2s ease-in-out;
+  font-size: 0.75rem;
+}
+
+.sidebar-nav .nav-item.open .active .bi-chevron-down {
+  transform: rotate(-180deg);
+}
+
+.sidebar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--default-color);
+  transition: 0.3;
+  background: var(--background-color-deep);
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.sidebar-nav .nav-link i {
+  font-size: 16px;
+  margin-right: 10px;
+  color: var(--default-color);
+}
+
+.sidebar-nav .nav-link:hover {
+  color: var(--accent-color-hover);
+  background: var(--background-color);
+}
+
+.sidebar-nav .nav-link:hover i {
+  color: var(--accent-color-hover);
+}
+
+.sidebar-nav .nav-link.active {
+  color: var(--accent-color);
+}
+
+.sidebar-nav .nav-link.active i {
+  color: var(--accent-color);
+}
+
+.sidebar-nav .nav-link.has-children i,
+.sidebar-nav .nav-link.has-children {
+  color: var(--default-color) !important;
+}
+
+.sidebar-nav .nav-content {
+  padding: 5px 0 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav .nav-content a {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 300;
+  transition: 0.3;
+  color: var(--default-color);
+  padding: 10px 0 10px 40px;
+  transition: 0.3s;
+}
+
+.sidebar-nav .nav-content a i {
+  font-size: 0.75rem;
+  margin-right: 8px;
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.sidebar-nav .nav-content a:hover {
+  color: var(--accent-color-hover);
+}
+.sidebar-nav .nav-content a.active {
+  color: var(--accent-color);
+}
+
+.toggle-sidebar #main,
+.toggle-sidebar #header,
+.toggle-sidebar #footer {
+  margin-left: 50px;
+}
+
+.toggle-sidebar .sidebar {
+  width: 50px;
+  padding-top: 16px !important;
+}
+
+.toggle-sidebar .lg-screen-logo {
+  display: none !important;
+}
+
+.toggle-sidebar .bi-chevron-down {
+  display: none !important;
+}
+.toggle-sidebar .sm-screen-logo {
+  display: flex !important;
+}
+
+.toggle-sidebar .sidebar-nav .nav-link {
+  padding: 10px 0;
+}
+.toggle-sidebar .sidebar-nav .nav-link span {
+  display: none;
+}
+.toggle-sidebar .sidebar-nav .nav-link:hover {
+  color: var(--accent-color-hover);
+  background: var(--heading-color);
+}
