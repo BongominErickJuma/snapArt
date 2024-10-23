@@ -1,7 +1,7 @@
 const dropdown = [
   {
     label: "Dashboard",
-    linkTo: "/dashboard",
+    linkTo: "/snapArt/dashboard",
     icon: "bi bi-house-door",
   },
   {

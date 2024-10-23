@@ -11,7 +11,7 @@ import SignUp from "./pages/Sign Up/SignUp";
 import ProtectedRoute from "./protect/ProtectedRoute";
 
 // Define your valid paths
-const validPaths = ["/dashboard", "/profile"];
+const validPaths = ["/snapArt/dashboard", "/snapArt/profile"];
 
 // Function to check if the current path is valid, including dynamic segments
 const isPathValid = (currentPath) => {
@@ -53,12 +53,12 @@ const App = () => {
       <div className="min-vh-100 main" id={`${showHeaderAndSidebar && "main"}`}>
         <Routes>
           {/* Public route */}
-          <Route exact path="/" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route exact path="/snapArt/" element={<Login />} />
+          <Route path="/snapArt/signup" element={<SignUp />} />
 
           {/* Protected routes */}
           <Route
-            path="/dashboard"
+            path="/snapArt/dashboard"
             element={
               <ProtectedRoute>
                 <Homepage />
@@ -66,7 +66,7 @@ const App = () => {
             }
           />
           <Route
-            path="/profile"
+            path="/snapArt/profile"
             element={
               <ProtectedRoute>
                 <Profile />

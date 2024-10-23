@@ -5,7 +5,7 @@ const Profile = () => {
   const [name, setName] = useState("Username");
   const [email, setEmail] = useState("useremail.com");
   const [phone, setPhone] = useState("N/A");
-  const [image, setImage] = useState("/images/team-1.jpg");
+  const [image, setImage] = useState("images/team-1.jpg");
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");

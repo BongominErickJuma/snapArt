@@ -6,7 +6,7 @@ const Login = () => {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    navigate("/dashboard"); // Trigger fetch on form submit
+    navigate("/snapArt/dashboard"); // Trigger fetch on form submit
   };
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const Login = () => {
 
         <p className="my-3 text-center">
           <small>
-            Don't have account? <Link to="/signup">Sign Up</Link>
+            Don't have account? <Link to="/snapArt/signup">Sign Up</Link>
           </small>
         </p>
       </form>

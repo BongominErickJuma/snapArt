@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "./header.css";
 import Profile from "./Profile";
-import { UserContext } from "../../../contexts/UserContext";
 
 const Header = (props) => {
   return (
@@ -47,7 +46,7 @@ const Header = (props) => {
                 data-bs-toggle="dropdown"
               >
                 <img
-                  src={"/images/team-1.jpg"}
+                  src={`${import.meta.env.VITE_IMAGE}`}
                   alt="Profile"
                   className="rounded-circle"
                 />

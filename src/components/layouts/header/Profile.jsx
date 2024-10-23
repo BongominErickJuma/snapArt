@@ -5,7 +5,7 @@ const Profile = () => {
   const navigate = useNavigate();
 
   const handleLogOut = () => {
-    navigate("/");
+    navigate("/snapArt/");
   };
 
   return (
@@ -20,7 +20,7 @@ const Profile = () => {
       <li>
         <Link
           className="dropdown-item d-flex align-items-center"
-          to={"/profile"}
+          to={"/snapArt/profile"}
         >
           <i className="bi bi-person"></i>
           <span>My Profile</span>
