@@ -13,7 +13,7 @@ const Profile = () => {
   const [alertType, setAlertType] = useState("warning"); // For styling success vs. warning alerts
 
   useEffect(() => {
-    document.title = "SnapArt | Profile";
+    document.title = "sNapEarn | Profile";
   }, []);
 
   const handlePasswordChange = () => {

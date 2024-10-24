@@ -10,13 +10,13 @@ const Login = () => {
   };
 
   useEffect(() => {
-    document.title = "SnapArt | Login";
+    document.title = "sNapEarn | Login";
   }, []);
 
   return (
     <div className="min-vh-100 main flex-c">
       <h2>
-        Snap<span className="designed">Art</span>
+        sNap<span className="designed">Earn</span>
       </h2>
       <p>Please Login</p>
 

@@ -11,7 +11,7 @@
   transition: all 0.3s;
   padding: 20px;
   overflow-y: auto;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: var(--accent-color) transparent;
   background-color: var(--background-color-deep);
   border-right: 1px solid var(--surface-color);

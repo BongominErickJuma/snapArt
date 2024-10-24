@@ -2,112 +2,193 @@ const dropdown = [
   {
     label: "Dashboard",
     linkTo: "/snapArt/dashboard",
-    icon: "bi bi-house-door",
+    icon: "bi bi-house-door", // Home icon for the dashboard
   },
   {
     label: "Tasks",
     linkTo: "#",
-    icon: "bi bi-journals",
+    icon: "bi bi-list-task", // Task list icon for tasks
     chevron: "bi bi-chevron-down",
     children: [
       {
-        label: "Add Tasks",
-        linkTo: "/addTasks",
-        icon: "bi bi-plus",
+        label: "All tasks",
+        linkTo: "/snapArt/allTasks",
+        icon: "bi bi-list-check", // List with checks for all tasks
       },
       {
-        label: "Due Today",
-        linkTo: "/tasksDueToday",
-        icon: "bi bi-brightness-high",
+        label: "My Tasks",
+        linkTo: "/snapArt/myTasks",
+        icon: "bi bi-calendar-day", // Calendar icon for my tasks
       },
       {
         label: "Completed",
-        linkTo: "/completed",
-        icon: "bi bi-check-all",
+        linkTo: "/snapArt/completedTasks",
+        icon: "bi bi-check-circle-fill", // Solid check circle for completed tasks
       },
-      { label: "Categories", linkTo: "/categories", icon: "bi bi-table" },
+      {
+        label: "Categories",
+        linkTo: "/snapArt/taskCategories",
+        icon: "bi bi-grid", // Grid icon for categories
+      },
     ],
   },
   {
-    label: "Products",
+    label: "Adverts",
     linkTo: "#",
-    icon: "bi bi-box",
+    icon: "bi bi-bullseye", // Target icon for adverts
     chevron: "bi bi-chevron-down",
     children: [
-      { label: "Adverts", linkTo: "/adverts", icon: "bi bi-graph-up" },
+      { label: "All", linkTo: "/snapArt/allAdverts", icon: "bi bi-collection" }, // Collection icon for all adverts
+      {
+        label: "Products",
+        linkTo: "/snapArt/products",
+        icon: "bi bi-box-seam", // Box seam icon for products
+      },
+      {
+        label: "Subscriptions",
+        linkTo: "/snapArt/subscriptions",
+        icon: "bi bi-receipt", // Receipt icon for subscriptions
+      },
     ],
   },
   {
     label: "Competitions",
     linkTo: "#",
-    icon: "bi bi-caret-right-fill",
-    chevron: "bi bi-chevron-down",
-    children: [
-      { label: "All", linkTo: "/allCompetitions", icon: "bi bi-book" },
-      {
-        label: "Create",
-        linkTo: "/createCompetitions",
-        icon: "bi bi-plus",
-      },
-      { label: "Involved", linkTo: "/involved", icon: "bi bi-check-square" },
-    ],
-  },
-  {
-    label: "Reccommend",
-    linkTo: "#",
-    icon: "bi bi-calendar",
+    icon: "bi bi-trophy", // Trophy icon for competitions
     chevron: "bi bi-chevron-down",
     children: [
       {
-        label: "All Accounts",
-        linkTo: "/allAccounts",
-        icon: "bi bi-clipboard-check",
+        label: "All",
+        linkTo: "/snapArt/allCompetitions",
+        icon: "bi bi-calendar-event", // Calendar event icon for all competitions
       },
       {
-        label: "Create Account",
-        linkTo: "/createAccount",
-        icon: "bi bi-journal-check",
+        label: "Completed",
+        linkTo: "/snapArt/completeCompetitions",
+        icon: "bi bi-check-circle", // Check circle for completed competitions
       },
       {
-        label: "Reccommended",
-        linkTo: "/reccommendedAccounts",
-        icon: "bi bi-chat-dots",
+        label: "Upcoming",
+        linkTo: "/snapArt/upcomingCompetitions",
+        icon: "bi bi-forward-fill", // Forward icon for upcoming competitions
+      },
+      {
+        label: "Ongoing",
+        linkTo: "/snapArt/ongoingCompetitions",
+        icon: "bi bi-play-circle", // Play circle icon for ongoing competitions
+      },
+      {
+        label: "Competitors",
+        linkTo: "/snapArt/competitors",
+        icon: "bi bi-person-lines-fill ", // Play circle icon for ongoing competitions
       },
     ],
   },
   {
     label: "Transactions",
     linkTo: "#",
-    icon: "bi bi-calendar",
+    icon: "bi bi-cash-stack", // Cash stack icon for transactions
     chevron: "bi bi-chevron-down",
     children: [
       {
-        label: "All",
-        linkTo: "/allTransactions",
-        icon: "bi bi-clipboard-check",
+        label: "Deposit",
+        linkTo: "/snapArt/depositTrans",
+        icon: "bi bi-arrow-up-circle", // Arrow up for deposit
       },
       {
-        label: "Pending",
-        linkTo: "/pendingTrans",
-        icon: "bi bi-journal-check",
+        label: "Reward",
+        linkTo: "/snapArt/rewardTrans",
+        icon: "bi bi-gift", // Gift icon for rewards
+      },
+      {
+        label: "Payments",
+        linkTo: "/snapArt/paymentTrans",
+        icon: "bi bi-credit-card", // Credit card for payments
+      },
+      {
+        label: "Withdraw",
+        linkTo: "/snapArt/widthdrawTrans",
+        icon: "bi bi-wallet", // Wallet for withdraw
       },
       {
         label: "History",
-        linkTo: "/transactionsHistory",
-        icon: "bi bi-chat-dots",
+        linkTo: "/snapArt/transactionsHistory",
+        icon: "bi bi-clock-history", // Clock history icon for transaction history
+      },
+    ],
+  },
+  {
+    label: "Wallet",
+    linkTo: "#",
+    icon: "bi bi-wallet2", // Wallet icon
+    chevron: "bi bi-chevron-down",
+    children: [
+      { label: "Assets", linkTo: "/snapArt/assets", icon: "bi bi-boxes" }, // Boxes icon for assets
+      {
+        label: "Exchanges",
+        linkTo: "/snapArt/exchanges",
+        icon: "bi bi-currency-exchange", // Currency exchange icon for exchanges
+      },
+      {
+        label: "Holding",
+        linkTo: "/snapArt/holding",
+        icon: "bi bi-pie-chart", // Pie chart icon for holding
+      },
+      {
+        label: "Account",
+        linkTo: "/snapArt/myAccount",
+        icon: "bi bi-person-circle", // Person circle for account
+      },
+    ],
+  },
+  {
+    label: "Recommend",
+    linkTo: "#",
+    icon: "bi bi-hand-thumbs-up", // Thumbs-up icon for recommendations
+    chevron: "bi bi-chevron-down",
+    children: [
+      {
+        label: "Youtube",
+        linkTo: "/snapArt/youtube",
+        icon: "bi bi-youtube", // Youtube icon
+      },
+      {
+        label: "Twitter",
+        linkTo: "/snapArt/twitter",
+        icon: "bi bi-twitter", // Twitter icon
+      },
+      {
+        label: "Tiktok",
+        linkTo: "/snapArt/tiktok",
+        icon: "bi bi-tiktok", // Tiktok icon
+      },
+      {
+        label: "Facebook",
+        linkTo: "/snapArt/facebook",
+        icon: "bi bi-facebook", // Facebook icon
+      },
+      {
+        label: "Instagram",
+        linkTo: "/snapArt/instagram",
+        icon: "bi bi-instagram", // Instagram icon
+      },
+      {
+        label: "Telegram",
+        linkTo: "/snapArt/telegram",
+        icon: "bi bi-telegram", // Telegram icon
+      },
+      {
+        label: "Snapchat",
+        linkTo: "/snapArt/snapchat",
+        icon: "bi bi-snapchat", // Snapchat icon
       },
     ],
   },
   {
     label: "Users",
-    linkTo: "#",
-    icon: "bi bi-people",
-    chevron: "bi bi-chevron-down",
-    children: [
-      { label: "Followers", linkTo: "/followers", icon: "bi bi-person" },
-      { label: "Followed", linkTo: "/followed", icon: "bi bi-person-badge" },
-      { label: "Trending", linkTo: "/trending", icon: "bi bi-star" },
-    ],
+    linkTo: "/snapArt/users",
+    icon: "bi bi-people", // People icon for users
   },
 ];
+
 export default dropdown;

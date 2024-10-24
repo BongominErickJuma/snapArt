@@ -26,7 +26,6 @@ body {
   color: var(--default-color);
   background: var(--background-color);
   background-size: 180% 180%;
-  /* animation: gradient-animation 18s ease infinite; */
 }
 
 @keyframes gradient-animation {
@@ -258,5 +257,13 @@ input[type="checkbox"] {
   background-color: var(--background-color);
   border-radius: 0 !important;
   box-shadow: none !important;
-  border: 2px solid var(--background-color-deep-hover);
+  border: 2px solid var(--accent-color);
+}
+
+input[type="checkbox"]:active,
+input[type="checkbox"]:focus {
+  background-color: var(--accent-color) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none;
 }

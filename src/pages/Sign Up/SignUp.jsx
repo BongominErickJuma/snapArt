@@ -10,13 +10,13 @@ const Login = () => {
   };
 
   useEffect(() => {
-    document.title = "SnapArt | Signup";
+    document.title = "sNapEarn | Signup";
   }, []);
 
   return (
     <div className="min-vh-100 main flex-c">
       <h2>
-        Snap<span className="designed">Art</span>
+        sNap<span className="designed">Earn</span>
       </h2>
       <p>Please Sign Up</p>
 
@@ -51,11 +51,21 @@ const Login = () => {
             required
           />
         </div>
-
         <div className="form-group">
-          <small>
-            By Signing up, You agree to <span className="designed">T&Cs</span>{" "}
-          </small>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              name="remember"
+              id="org_rememberMe"
+            />
+            <label className="form-check-label w-100" htmlFor="rememberMe">
+              <small>
+                By Signing up, You agree to{" "}
+                <span className="designed">T&Cs</span>{" "}
+              </small>
+            </label>
+          </div>
         </div>
         <button type="submit" className="btn w-100 view-btn">
           Sign Up

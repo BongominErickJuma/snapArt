@@ -10,7 +10,7 @@ const Sidebar = () => {
         <div className="sidebar-logo mb-2">
           <a href="#" className="lg-screen-logo">
             <span className="d-lg-block h4 text-white">
-              snap<span className="designed">Art</span>
+              sNap<span className="designed">Earn</span>
             </span>
           </a>
         </div>
