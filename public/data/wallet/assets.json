@@ -1,0 +1,36 @@
+{
+  "assets": [
+    {
+      "id": 1,
+      "name": "Gold",
+      "symbol": "bi-gem",
+      "description": "A precious metal asset with high market value.",
+      "createdAt": "2024-01-10",
+      "lastModified": "2024-10-20"
+    },
+    {
+      "id": 2,
+      "name": "Silver",
+      "symbol": "bi-gem",
+      "description": "A versatile metal asset used in industrial and investment markets.",
+      "createdAt": "2023-06-15",
+      "lastModified": "2024-07-18"
+    },
+    {
+      "id": 3,
+      "name": "Bitcoin",
+      "symbol": "bi-currency-bitcoin",
+      "description": "A decentralized digital cryptocurrency with a finite supply.",
+      "createdAt": "2022-12-05",
+      "lastModified": "2024-09-30"
+    },
+    {
+      "id": 4,
+      "name": "Ethereum",
+      "symbol": "bi-currency-exchange",
+      "description": "A cryptocurrency used on the Ethereum blockchain for smart contracts.",
+      "createdAt": "2023-01-25",
+      "lastModified": "2024-08-14"
+    }
+  ]
+}

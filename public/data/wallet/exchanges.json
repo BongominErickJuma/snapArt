@@ -1,0 +1,31 @@
+{
+  "exchanges": [
+    {
+      "id": "1",
+      "name": "Exchange A",
+      "baseAsset": "BTC",
+      "minorAsset": "ETH",
+      "rate": "0.05",
+      "createdAt": "2024-01-15",
+      "lastModified": "2024-06-18"
+    },
+    {
+      "id": "2",
+      "name": "Exchange B",
+      "baseAsset": "USD",
+      "minorAsset": "EUR",
+      "rate": "1.12",
+      "createdAt": "2023-11-20",
+      "lastModified": "2024-05-14"
+    },
+    {
+      "id": "3",
+      "name": "Exchange C",
+      "baseAsset": "GBP",
+      "minorAsset": "JPY",
+      "rate": "145.3",
+      "createdAt": "2022-08-10",
+      "lastModified": "2024-04-01"
+    }
+  ]
+}

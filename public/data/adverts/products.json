@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "productName": "Smart Watch",
+      "imgUrl": "https://picsum.photos/id/103/600/400",
+      "description": "A feature-rich smart watch with health tracking capabilities.",
+      "advertiser": "Tech Solutions",
+      "cost": "$199"
+    },
+    {
+      "id": "2",
+      "productName": "Eco-Friendly Water Bottle",
+      "imgUrl": "https://picsum.photos/id/1056/600/400",
+      "description": "Reusable water bottle made from recycled materials.",
+      "advertiser": "Green Earth Goods",
+      "cost": "$25"
+    }
+  ]
+}

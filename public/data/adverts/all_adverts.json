@@ -1,0 +1,38 @@
+{
+  "adverts": [
+    {
+      "id": "1",
+      "businessName": "Tech Solutions",
+      "coverImage": "https://picsum.photos/id/1011/600/400",
+      "address": "123 Tech Street, Silicon Valley",
+      "contact": "+1234567890",
+      "websiteUrl": "https://techsolutions.com",
+      "tiktok": "@techsolutions",
+      "twitter": "@techsolutions",
+      "instagram": "@techsolutions",
+      "facebook": "facebook.com/techsolutions",
+      "period": "3 months",
+      "about": "Innovative tech solutions for modern businesses.",
+      "expiryDate": "2024-12-31",
+      "viewsCount": 1540,
+      "products": ["Software Development", "Consulting", "Cloud Solutions"]
+    },
+    {
+      "id": "2",
+      "businessName": "Green Earth Goods",
+      "coverImage": "https://picsum.photos/id/1020/600/400",
+      "address": "45 Eco Lane, Portland",
+      "contact": "+0987654321",
+      "websiteUrl": "https://greenearthgoods.com",
+      "tiktok": "@greenearthgoods",
+      "twitter": "@greenearthgoods",
+      "instagram": "@greenearthgoods",
+      "facebook": "facebook.com/greenearthgoods",
+      "period": "6 months",
+      "about": "Eco-friendly products for sustainable living.",
+      "expiryDate": "2025-03-01",
+      "viewsCount": 2750,
+      "products": ["Recycled Paper", "Organic Food", "Bamboo Utensils"]
+    }
+  ]
+}

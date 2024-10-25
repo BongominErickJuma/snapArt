@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "InnoTech",
+      "email": "innotech@example.com",
+      "profileImage": "https://picsum.photos/id/1005/400/400",
+      "socialLinks": {
+        "tiktok": "https://tiktok.com/@innotech",
+        "twitter": "https://twitter.com/innotech",
+        "facebook": "https://facebook.com/innotech",
+        "instagram": "https://instagram.com/innotech"
+      },
+      "contestsCount": 5,
+      "totalViewsCount": 1200,
+      "dailyVotesCount": 85,
+      "totalVotesCount": 4300,
+      "dueDate": "2024-12-31",
+      "subscription": "Premium Plan"
+    },
+    {
+      "id": "2",
+      "username": "CreativeMind",
+      "email": "creativemind@example.com",
+      "profileImage": "https://picsum.photos/id/1006/400/400",
+      "socialLinks": {
+        "tiktok": "https://tiktok.com/@creativemind",
+        "twitter": "https://twitter.com/creativemind",
+        "facebook": "https://facebook.com/creativemind",
+        "instagram": "https://instagram.com/creativemind"
+      },
+      "contestsCount": 3,
+      "totalViewsCount": 750,
+      "dailyVotesCount": 60,
+      "totalVotesCount": 2100,
+      "dueDate": "2025-01-15",
+      "subscription": "Basic Plan"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "histories": [
+    {
+      "id": "1",
+      "username": "InnoTech",
+      "transactionType": "Deposit",
+      "transactionStatus": "Completed",
+      "assetName": "USD",
+      "tnxDate": "2023-10-01",
+      "account": "Savings Account",
+      "reference": "TXN12345"
+    },
+    {
+      "id": "2",
+      "username": "CreativeMind",
+      "transactionType": "Withdrawal",
+      "transactionStatus": "Pending",
+      "assetName": "EUR",
+      "tnxDate": "2023-09-15",
+      "account": "Checking Account",
+      "reference": "TXN67890"
+    }
+  ]
+}

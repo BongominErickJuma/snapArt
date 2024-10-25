@@ -1,0 +1,38 @@
+{
+  "contestants": [
+    {
+      "id": "1",
+      "username": "TechGuru",
+      "email": "techguru@example.com",
+      "profileImage": "https://picsum.photos/id/1025/400/400",
+      "votes": 320,
+      "socialLinks": {
+        "facebook": "https://facebook.com/techguru",
+        "tiktok": "https://tiktok.com/@techguru",
+        "twitter": "https://twitter.com/techguru",
+        "instagram": "https://instagram.com/techguru",
+        "snapchat": "https://snapchat.com/add/techguru"
+      },
+      "hobbies": ["coding", "gaming", "blogging"],
+      "reason": "To inspire and engage with tech enthusiasts worldwide.",
+      "role": "Developer"
+    },
+    {
+      "id": "2",
+      "username": "ArtisticSoul",
+      "email": "artisticsoul@example.com",
+      "profileImage": "https://picsum.photos/id/1016/400/400",
+      "votes": 210,
+      "socialLinks": {
+        "facebook": "https://facebook.com/artisticsoul",
+        "tiktok": "https://tiktok.com/@artisticsoul",
+        "twitter": "https://twitter.com/artisticsoul",
+        "instagram": "https://instagram.com/artisticsoul",
+        "snapchat": "https://snapchat.com/add/artisticsoul"
+      },
+      "hobbies": ["painting", "photography", "traveling"],
+      "reason": "To share my artistic journey and inspire creativity.",
+      "role": "Artist"
+    }
+  ]
+}

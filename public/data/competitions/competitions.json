@@ -1,0 +1,44 @@
+{
+  "competitions": [
+    {
+      "id": "1",
+      "title": "Annual Coding Challenge",
+      "description": "A competition for developers to showcase their coding skills.",
+      "coverImage": "https://picsum.photos/id/1026/400/400",
+      "startDate": "2023-01-01",
+      "endDate": "2023-01-15",
+      "votes": 520,
+      "contestants": 30,
+      "prizes": [
+        {
+          "position": 1,
+          "description": "Laptop and cash prize"
+        },
+        {
+          "position": 2,
+          "description": "Tablet and gift card"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Art Marathon",
+      "description": "An art competition for young and upcoming artists.",
+      "coverImage": "https://picsum.photos/id/1027/400/400",
+      "startDate": "2023-03-10",
+      "endDate": "2023-03-20",
+      "votes": 1050,
+      "contestants": 45,
+      "prizes": [
+        {
+          "position": 1,
+          "description": "Studio equipment and cash prize"
+        },
+        {
+          "position": 2,
+          "description": "Art supplies voucher"
+        }
+      ]
+    }
+  ]
+}

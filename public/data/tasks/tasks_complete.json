@@ -1,0 +1,37 @@
+{
+  "tasks_complete": [
+    {
+      "id": 1,
+      "quantity": 5,
+      "taskTitle": "Completed tasks",
+      "rewardedPoints": 50,
+      "status": "Completed",
+      "userId": "U123",
+      "completionDate": "2024-10-10",
+      "details": "Completed the task by watching 5 tutorial videos and answering quizzes.",
+      "image": "https://picsum.photos/id/1018/400/300"
+    },
+    {
+      "id": 2,
+      "quantity": 3,
+      "taskTitle": "Completed Yesterday",
+      "rewardedPoints": 30,
+      "status": "Completed",
+      "userId": "U124",
+      "completionDate": "2024-10-12",
+      "details": "Task involved filling out three surveys for market research.",
+      "image": "https://picsum.photos/id/1019/400/300"
+    },
+    {
+      "id": 3,
+      "taskTitle": "Completed weeks ago",
+      "quantity": 10,
+      "rewardedPoints": 100,
+      "status": "Completed",
+      "userId": "U125",
+      "completionDate": "2024-10-15",
+      "details": "Watched 10 advertisements and provided feedback on each.",
+      "image": "https://picsum.photos/id/10120/400/300"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "holdings": [
+    {
+      "id": "1",
+      "Asset": "Bitcoin",
+      "amount": "0.25",
+      "createdAt": "2024-05-10",
+      "lastModified": "2024-10-01"
+    },
+    {
+      "id": "2",
+      "Asset": "Ethereum",
+      "amount": "1.5",
+      "createdAt": "2024-03-22",
+      "lastModified": "2024-09-15"
+    },
+    {
+      "id": "3",
+      "Asset": "Litecoin",
+      "amount": "10",
+      "createdAt": "2024-06-18",
+      "lastModified": "2024-10-10"
+    },
+    {
+      "id": "4",
+      "Asset": "Ripple",
+      "amount": "500",
+      "createdAt": "2024-01-05",
+      "lastModified": "2024-08-20"
+    }
+  ]
+}

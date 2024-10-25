@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "taskTitle": "Complete React Module",
+      "link": "https://example.com/react-module",
+      "description": "Learn and complete all tasks in the React module.",
+      "unitCost": 500,
+      "rewardAsset": "Points",
+      "unitReward": 100,
+      "taskStatus": "Pending",
+      "paymentStatus": "Unpaid",
+      "category": "Education",
+      "image": "https://picsum.photos/id/1016/400/300"
+    },
+    {
+      "id": 2,
+      "taskTitle": "Submit Weekly Report",
+      "link": "https://example.com/weekly-report",
+      "description": "Prepare and submit the weekly report by Friday.",
+      "unitCost": 300,
+      "rewardAsset": "Points",
+      "unitReward": 50,
+      "taskStatus": "Completed",
+      "paymentStatus": "Paid",
+      "category": "Work",
+      "image": "https://picsum.photos/id/1011/400/300"
+    }
+  ]
+}

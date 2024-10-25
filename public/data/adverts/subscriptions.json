@@ -1,0 +1,22 @@
+{
+  "subscriptions": [
+    {
+      "id": "1",
+      "name": "Monthly Plan",
+      "description": "Access to all features on a monthly basis.",
+      "amount": "$9.99",
+      "isActive": true,
+      "creationDate": "2023-01-15",
+      "lastModified": "2023-09-12"
+    },
+    {
+      "id": "2",
+      "name": "Annual Plan",
+      "description": "Access to all features with a yearly discount.",
+      "amount": "$99.99",
+      "isActive": true,
+      "creationDate": "2022-06-10",
+      "lastModified": "2023-06-10"
+    }
+  ]
+}
