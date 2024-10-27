@@ -31,7 +31,7 @@ const AllAdverts = () => {
 
   return (
     <div className="container mt-4">
-      <div className="flex-r mb-3 px-2">
+      <div className="flex-r mb-3">
         <h2>Advertisements List</h2>
         <form className="search-form">
           <input
@@ -56,13 +56,17 @@ const AllAdverts = () => {
           <table className="table table-primary">
             <thead>
               <tr>
-                <th scope="col">Cover</th>
+                <th scope="col">
+                  <div className="ms-1"> Cover</div>
+                </th>
                 <th scope="col">Business Name</th>
                 <th scope="col">Address</th>
                 <th scope="col">Contact</th>
                 <th scope="col">Expiry Date</th>
                 <th scope="col">Views</th>
-                <th className="text-center">Action</th>
+                <th scope="col">
+                  <div className="text-end me-2"> Action</div>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -71,7 +75,7 @@ const AllAdverts = () => {
                   <td>
                     <img
                       src={advert.coverImage}
-                      alt={`${advert.businessName}'s photo`}
+                      alt="photo"
                       width="32"
                       height="32"
                       className="rounded-circle"
@@ -82,7 +86,7 @@ const AllAdverts = () => {
                   <td>{advert.contact}</td>
                   <td>{advert.expiryDate}</td>
                   <td>{advert.viewsCount}</td>
-                  <td className="text-center">
+                  <td className="text-end">
                     <button
                       className="btn btn-sm btn-outline-primary view-btn"
                       onClick={() => openModal(advert)}

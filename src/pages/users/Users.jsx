@@ -28,7 +28,7 @@ const User = () => {
 
   return (
     <div className="container mt-4">
-      <div className="flex-r mb-3 px-2">
+      <div className="flex-r mb-3">
         <h2>Users List</h2>
         <form className="search-form">
           <input
@@ -53,14 +53,18 @@ const User = () => {
           <table className="table table-primary">
             <thead>
               <tr>
-                <th scope="col">Image</th>
+                <th scope="col">
+                  <div className="ms-1">Image</div>
+                </th>
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
                 <th scope="col">Contests</th>
                 <th scope="col">Views</th>
                 <th scope="col">Votes</th>
                 <th scope="col">Subscription</th>
-                <th className="text-center">Action</th>
+                <th scope="col">
+                  <div className="text-end me-2"> Action</div>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -69,7 +73,7 @@ const User = () => {
                   <td>
                     <img
                       src={user.profileImage}
-                      alt={user.username}
+                      alt="photo"
                       width="32"
                       height="32"
                       className="rounded-circle"
@@ -81,7 +85,7 @@ const User = () => {
                   <td>{user.totalViewsCount}</td>
                   <td>{user.totalVotesCount}</td>
                   <td>{user.subscription}</td>
-                  <td className="text-center">
+                  <td className="text-end">
                     <button
                       className="btn btn-sm btn-outline-primary view-btn"
                       onClick={() => openModal(user)}

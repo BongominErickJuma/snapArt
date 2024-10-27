@@ -41,7 +41,7 @@ const AllTasks = () => {
 
   return (
     <div className="container mt-4">
-      <div className="flex-r mb-3 px-2">
+      <div className="flex-r mb-3">
         <h2 className="">Tasks List</h2>
         <form className="search-form">
           <input
@@ -65,13 +65,15 @@ const AllTasks = () => {
           <table className="table table-primary">
             <thead>
               <tr>
-                <th scope="col">Cover</th>
+                <th scope="col">
+                  <div className="ms-1">Cover</div>
+                </th>
                 <th scope="col">Task Title</th>
                 <th scope="col">Unit Cost</th>
                 <th scope="col">Unit Reward</th>
                 <th scope="col">Category</th>
-                <th scope="col" className="text-center">
-                  Action
+                <th scope="col">
+                  <div className="text-end me-2"> Action</div>
                 </th>
               </tr>
             </thead>

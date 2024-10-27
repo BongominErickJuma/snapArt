@@ -31,7 +31,7 @@ const History = () => {
 
   return (
     <div className="container mt-4">
-      <div className="flex-r mb-3 px-2">
+      <div className="flex-r mb-3">
         <h2>Transaction History</h2>
         <form className="search-form">
           <input
@@ -59,14 +59,18 @@ const History = () => {
           <table className="table table-primary">
             <thead>
               <tr>
-                <th scope="col">Username</th>
+                <th scope="col">
+                  <div className="ms-1">Username</div>
+                </th>
                 <th scope="col">Type</th>
                 <th scope="col">Status</th>
                 <th scope="col">Asset Name</th>
                 <th scope="col">Date</th>
                 <th scope="col">Account</th>
                 <th scope="col">Reference</th>
-                <th className="text-center">Action</th>
+                <th scope="col">
+                  <div className="text-end me-2"> Action</div>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -79,7 +83,7 @@ const History = () => {
                   <td>{history.tnxDate}</td>
                   <td>{history.account}</td>
                   <td>{history.reference}</td>
-                  <td className="text-center">
+                  <td className="text-end">
                     <button
                       className="btn btn-sm btn-outline-primary view-btn"
                       onClick={() => openModal(history)}

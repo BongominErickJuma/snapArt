@@ -31,7 +31,7 @@ const Product = () => {
 
   return (
     <div className="container mt-4">
-      <div className="flex-r mb-3 px-2">
+      <div className="flex-r mb-3">
         <h2>Product List</h2>
         <form className="search-form">
           <input
@@ -56,11 +56,15 @@ const Product = () => {
           <table className="table table-primary">
             <thead>
               <tr>
-                <th scope="col">Cover</th>
+                <th scope="col">
+                  <div className="ms-1">Cover</div>
+                </th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Advertiser</th>
                 <th scope="col">Cost</th>
-                <th className="text-center">Action</th>
+                <th scope="col">
+                  <div className="text-end me-2"> Action</div>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -69,7 +73,7 @@ const Product = () => {
                   <td>
                     <img
                       src={product.imgUrl}
-                      alt={product.productName}
+                      alt="photo"
                       width="32"
                       height="32"
                       className="rounded-circle"
@@ -78,7 +82,7 @@ const Product = () => {
                   <td>{product.productName}</td>
                   <td>{product.advertiser}</td>
                   <td>{product.cost}</td>
-                  <td className="text-center">
+                  <td className="text-end">
                     <button
                       className="btn btn-sm btn-outline-primary view-btn"
                       onClick={() => openModal(product)}

@@ -31,7 +31,7 @@ const Subscriptions = () => {
 
   return (
     <div className="container mt-4">
-      <div className="flex-r mb-3 px-2">
+      <div className="flex-r mb-3">
         <h2>Subscriptions List</h2>
         <form className="search-form">
           <input
@@ -59,12 +59,16 @@ const Subscriptions = () => {
           <table className="table table-primary">
             <thead>
               <tr>
-                <th scope="col">Name</th>
+                <th scope="col">
+                  <div className="ms-1">Image</div>
+                </th>
                 <th scope="col">Amount</th>
                 <th scope="col">Is Active</th>
                 <th scope="col">Creation Date</th>
                 <th scope="col">Last Modified</th>
-                <th className="text-center">Action</th>
+                <th scope="col">
+                  <div className="text-end me-2"> Action</div>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -75,7 +79,7 @@ const Subscriptions = () => {
                   <td>{subscription.isActive ? "Active" : "Inactive"}</td>
                   <td>{subscription.creationDate}</td>
                   <td>{subscription.lastModified}</td>
-                  <td className="text-center">
+                  <td className="text-end">
                     <button
                       className="btn btn-sm btn-outline-primary view-btn"
                       onClick={() => openModal(subscription)}

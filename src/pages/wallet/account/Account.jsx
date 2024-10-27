@@ -31,7 +31,7 @@ const Accounts = () => {
 
   return (
     <div className="container mt-4">
-      <div className="flex-r mb-3 px-2">
+      <div className="flex-r mb-3">
         <h2>Accounts List</h2>
         <form className="search-form">
           <input
@@ -56,11 +56,15 @@ const Accounts = () => {
           <table className="table table-primary">
             <thead>
               <tr>
-                <th scope="col">Account Holder Name</th>
+                <th scope="col">
+                  <div className="ms-1">Account Holder Name</div>
+                </th>
                 <th scope="col">Date Created</th>
                 <th scope="col">Last Modified</th>
                 <th scope="col">User ID</th>
-                <th className="text-center">Action</th>
+                <th scope="col">
+                  <div className="text-end me-2"> Action</div>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -70,7 +74,7 @@ const Accounts = () => {
                   <td>{account.dateCreated}</td>
                   <td>{account.lastModified}</td>
                   <td>{account.userId}</td>
-                  <td className="text-center">
+                  <td className="text-end">
                     <button
                       className="btn btn-sm btn-outline-primary view-btn"
                       onClick={() => openModal(account)}

@@ -104,7 +104,7 @@ const MyTasks = () => {
 
   return (
     <div className="container mt-4">
-      <div className="flex-r mb-3 px-2">
+      <div className="flex-r mb-3">
         <h2>Tasks List</h2>
         <form className="search-form">
           <input
@@ -134,14 +134,18 @@ const MyTasks = () => {
           <table className="table table-primary">
             <thead>
               <tr>
-                <th>Cover</th>
+                <th>
+                  <div className="ms-1">Cover</div>
+                </th>
                 <th>Task Title</th>
                 <th>Unit Cost</th>
                 <th>Base Asset</th>
                 <th>Status</th>
                 <th>Category</th>
                 <th>Created</th>
-                <th className="text-center">Action</th>
+                <th scope="col">
+                  <div className="text-end me-2"> Action</div>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -159,7 +163,7 @@ const MyTasks = () => {
                   <td>{task.name}</td>
                   <td>{task.unitCost}</td>
                   <td>{task.baseAsset}</td>
-                  <td>{`${task.inactive ? "Taken" : "Not Taken"}`}</td>
+                  <td>{`${task.inactive ? "active" : "inactive"}`}</td>
                   <td>{task.category}</td>
                   <td>{task.createdAt}</td>
                   <td className="text-end">
