@@ -16,13 +16,18 @@ const dropdown = [
         icon: "bi bi-list-check", // List with checks for all tasks
       },
       {
-        label: "My Tasks",
-        linkTo: "/snapArt/myTasks",
-        icon: "bi bi-calendar-day", // Calendar icon for my tasks
-      },
-      {
         label: "Completed",
         linkTo: "/snapArt/completedTasks",
+        icon: "bi bi-check-circle-fill", // Solid check circle for completed tasks
+      },
+      {
+        label: "Verified",
+        linkTo: "/snapArt/verifiedTasks",
+        icon: "bi bi-check-circle-fill", // Solid check circle for completed tasks
+      },
+      {
+        label: "Unverified",
+        linkTo: "/snapArt/unverifiedTasks",
         icon: "bi bi-check-circle-fill", // Solid check circle for completed tasks
       },
       {

@@ -1,0 +1,69 @@
+{
+  "task_categories": [
+    {
+      "id": 1,
+      "name": "Task A",
+      "link": "task_a.html",
+      "description": "This is a sample task description for Task A.",
+      "unitCost": 15.5,
+      "baseAsset": "USD",
+      "image": "https://picsum.photos/id/1011/400/300",
+      "allowedSubscriptions": ["monthly", "yearly"],
+      "inactive": false,
+      "createdAt": "2024-10-10",
+      "category": "Youtube follows"
+    },
+    {
+      "id": 2,
+      "name": "Task B",
+      "link": "task_a.html",
+      "description": "This task involves data entry for large datasets.",
+      "unitCost": 20.0,
+      "baseAsset": "USD",
+      "image": "https://picsum.photos/id/1012/400/300",
+      "allowedSubscriptions": ["daily", "weekly"],
+      "inactive": false,
+      "createdAt": "2024-10-11",
+      "category": "tiktok likes"
+    },
+    {
+      "id": 3,
+      "name": "Task C",
+      "link": "task_a.html",
+      "description": "Task C requires high accuracy in transcription.",
+      "unitCost": 18.75,
+      "baseAsset": "USD",
+      "image": "https://picsum.photos/id/1013/400/300",
+      "allowedSubscriptions": ["yearly"],
+      "inactive": true,
+      "createdAt": "2024-10-12",
+      "category": "instagram follows"
+    },
+    {
+      "id": 4,
+      "name": "Task D",
+      "link": "task_a.html",
+      "description": "A task for basic graphic design and editing.",
+      "unitCost": 25.0,
+      "baseAsset": "USD",
+      "image": "https://picsum.photos/id/1014/400/300",
+      "allowedSubscriptions": ["monthly", "yearly", "weekly"],
+      "inactive": false,
+      "createdAt": "2024-10-13",
+      "category": "tiktok follows"
+    },
+    {
+      "id": 5,
+      "name": "Task E",
+      "link": "task_a.html",
+      "description": "Simple translation task with language accuracy requirements.",
+      "unitCost": 22.0,
+      "baseAsset": "USD",
+      "image": "https://picsum.photos/id/1015/400/300",
+      "allowedSubscriptions": ["daily", "weekly", "monthly"],
+      "inactive": false,
+      "createdAt": "2024-10-14",
+      "category": "Youtube likes"
+    }
+  ]
+}

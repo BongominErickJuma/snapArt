@@ -1,48 +1,42 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const TasksCompleted = () => {
-  const [selectedTask, setSelectedTask] = useState(null);
   const [tasks, setTasks] = useState(null);
-  const [searchQuery, setSearchQuery] = useState(""); // State for search query
+  const [searchQuery, setSearchQuery] = useState("");
 
   const [fetchUrl, setFetchUrl] = useState({
-    url: import.meta.env.VITE_GET_COMPLETE_TASKS,
+    url: import.meta.env.VITE_GET_MY_TASKS,
     options: {},
   });
 
   const { data, error, loading } = useFetch(fetchUrl.url, fetchUrl.options);
 
   useEffect(() => {
-    document.title = "sNup Earn | Tasks";
+    document.title = "sNup Earn | My Tasks";
     if (data) {
-      setTasks(data.tasks_complete);
+      const completedTasks = data.my_tasks.filter(
+        (mt) => mt.part_completed == "100"
+      );
+      setTasks(completedTasks);
     }
   }, [data]);
 
-  const openModal = (item) => {
-    setSelectedTask(item);
-  };
-
-  const closeModal = () => {
-    setSelectedTask(null);
-  };
-
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value); // Update search query state
+    setSearchQuery(e.target.value);
   };
 
-  // Filter tasks based on search query
   const filteredTasks = tasks
     ? tasks.filter((task) =>
-        task.taskTitle.toLowerCase().includes(searchQuery.toLowerCase())
+        task.name.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : [];
 
   return (
     <div className="container mt-4">
       <div className="flex-r mb-3">
-        <h2 className="">Tasks Completed</h2>
+        <h2>Completed Tasks</h2>
         <form className="search-form">
           <input
             type="search"
@@ -65,13 +59,11 @@ const TasksCompleted = () => {
           <table className="table table-primary">
             <thead>
               <tr>
-                <th scope="col">
+                <th>
                   <div className="ms-1">Cover</div>
                 </th>
-                <th scope="col">Task Title</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Points</th>
-                <th scope="col">Date Completed</th>
+                <th>Category</th>
+                <th>Quantity</th>
                 <th scope="col">
                   <div className="text-end me-2"> Action</div>
                 </th>
@@ -88,18 +80,18 @@ const TasksCompleted = () => {
                       height="32"
                       className="rounded-circle"
                     />
+                    <span className="ms-2">{task.name}</span>
                   </td>
-                  <td>{task.taskTitle}</td>
+                  <td>{task.category}</td>
                   <td>{task.quantity}</td>
-                  <td>{task.rewardedPoints}</td>
-                  <td>{task.completionDate}</td>
                   <td className="text-end">
-                    <button
+                    <Link
+                      to={"/snapArt/task_paticipants"}
                       className="btn btn-sm btn-outline-primary view-btn"
                       onClick={() => openModal(task, "view")}
                     >
-                      View Details
-                    </button>
+                      Participants
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -108,59 +100,6 @@ const TasksCompleted = () => {
         </div>
       ) : (
         !loading && <p>No Tasks Available</p>
-      )}
-
-      {selectedTask && (
-        <div
-          className="modal fade show custom-modal"
-          tabIndex="-1"
-          role="dialog"
-          style={{ display: "block" }}
-        >
-          <div className="modal-dialog modal-dialog-centered" role="document">
-            <div className="modal-content animate-modal">
-              <div className="modal-header bg-primary text-white">
-                <h5 className="modal-title">
-                  {`${selectedTask.taskTitle} Details`}
-                </h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={closeModal}
-                />
-              </div>
-              <div className="modal-body">
-                {selectedTask && (
-                  <div className="task-details-card">
-                    <img
-                      src={selectedTask.image}
-                      alt={selectedTask.name}
-                      className="img-fluid mb-3 w-100"
-                    />
-                    <h4>{selectedTask.taskTitle}</h4>
-                    <p>
-                      <strong>Quantity:</strong> {selectedTask.quantity}
-                    </p>
-                    <p>
-                      <strong>Rewarded Points:</strong>{" "}
-                      {selectedTask.rewardedPoints}
-                    </p>
-                    <p>
-                      <strong>Date Completed:</strong>{" "}
-                      {selectedTask.completionDate}
-                    </p>
-                    <p>
-                      <strong>Details:</strong> {selectedTask.details}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      {selectedTask && (
-        <div className="modal-backdrop fade show" onClick={closeModal}></div>
       )}
     </div>
   );

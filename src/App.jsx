@@ -39,6 +39,7 @@ import Reward from "./pages/transactions/reward/Reward";
 import Payments from "./pages/transactions/payments/Payments";
 import Holding from "./pages/wallet/holding/Holding";
 import Users from "./pages/users/Users";
+import TaskParticipants from "./pages/tasks/complete/TaskParticipants";
 
 // Function to check if the current path is valid, including dynamic segments
 const isPathValid = (currentPath) => {
@@ -121,6 +122,14 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <TasksCompleted />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/snapArt/task_participants"
+            element={
+              <ProtectedRoute>
+                <TaskParticipants />
               </ProtectedRoute>
             }
           />

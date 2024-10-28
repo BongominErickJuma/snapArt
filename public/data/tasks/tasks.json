@@ -10,7 +10,7 @@
       "unitReward": 100,
       "taskStatus": "Pending",
       "paymentStatus": "Unpaid",
-      "category": "Education",
+      "category": "Tiktok likes",
       "image": "https://picsum.photos/id/1016/400/300"
     },
     {
@@ -23,7 +23,7 @@
       "unitReward": 50,
       "taskStatus": "Completed",
       "paymentStatus": "Paid",
-      "category": "Work",
+      "category": "Youtube follows",
       "image": "https://picsum.photos/id/1011/400/300"
     }
   ]

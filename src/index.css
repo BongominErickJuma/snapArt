@@ -39,7 +39,11 @@ body {
     background-position: 0% 50%;
   }
 }
+/* text colors */
 
+.text-grey {
+  color: #c4c4c4;
+}
 .form-group {
   margin: 1em 0;
 }

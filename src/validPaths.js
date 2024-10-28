@@ -3,6 +3,7 @@ const validPaths = [
   "/snapArt/allTasks",
   "/snapArt/myTasks",
   "/snapArt/completedTasks",
+  "/snapArt/task_participants",
   "/snapArt/taskCategories",
   "/snapArt/allAdverts",
   "/snapArt/products",

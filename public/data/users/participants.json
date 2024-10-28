@@ -1,0 +1,89 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "InnoTech",
+      "email": "innotech@example.com",
+      "reward": 100,
+      "quantity": 100,
+      "date": "2024-11-04",
+      "profileImage": "https://picsum.photos/id/1005/400/400",
+      "subscription": "Premium",
+      "status": "Verified",
+      "socialLinks": {
+        "tiktok": "https://tiktok.com/@innotech",
+        "twitter": "https://twitter.com/innotech",
+        "facebook": "https://facebook.com/innotech",
+        "instagram": "https://instagram.com/innotech"
+      }
+    },
+    {
+      "id": "2",
+      "username": "TechGuru",
+      "email": "techguru@example.com",
+      "reward": 200,
+      "quantity": 150,
+      "date": "2024-10-30",
+      "profileImage": "https://picsum.photos/id/1011/400/400",
+      "subscription": "Standard",
+      "status": "Not Verified",
+      "socialLinks": {
+        "tiktok": "https://tiktok.com/@techguru",
+        "twitter": "https://twitter.com/techguru",
+        "facebook": "https://facebook.com/techguru",
+        "instagram": "https://instagram.com/techguru"
+      }
+    },
+    {
+      "id": "3",
+      "username": "CodeMaster",
+      "email": "codemaster@example.com",
+      "reward": 150,
+      "quantity": 200,
+      "date": "2024-10-25",
+      "profileImage": "https://picsum.photos/id/1027/400/400",
+      "subscription": "Basic",
+      "status": "Verified",
+      "socialLinks": {
+        "tiktok": "https://tiktok.com/@codemaster",
+        "twitter": "https://twitter.com/codemaster",
+        "facebook": "https://facebook.com/codemaster",
+        "instagram": "https://instagram.com/codemaster"
+      }
+    },
+    {
+      "id": "4",
+      "username": "InnovateLab",
+      "email": "innovatelab@example.com",
+      "reward": 180,
+      "quantity": 130,
+      "date": "2024-10-15",
+      "profileImage": "https://picsum.photos/id/1033/400/400",
+      "subscription": "Premium",
+      "status": "Verified",
+      "socialLinks": {
+        "tiktok": "https://tiktok.com/@innovatelab",
+        "twitter": "https://twitter.com/innovatelab",
+        "facebook": "https://facebook.com/innovatelab",
+        "instagram": "https://instagram.com/innovatelab"
+      }
+    },
+    {
+      "id": "5",
+      "username": "DevNest",
+      "email": "devnest@example.com",
+      "reward": 90,
+      "quantity": 75,
+      "date": "2024-10-20",
+      "profileImage": "https://picsum.photos/id/1045/400/400",
+      "subscription": "Standard",
+      "status": "Not Verified",
+      "socialLinks": {
+        "tiktok": "https://tiktok.com/@devnest",
+        "twitter": "https://twitter.com/devnest",
+        "facebook": "https://facebook.com/devnest",
+        "instagram": "https://instagram.com/devnest"
+      }
+    }
+  ]
+}
