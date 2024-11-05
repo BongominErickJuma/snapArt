@@ -117,7 +117,7 @@ const Product = () => {
               </div>
               <div className="modal-body">
                 <div className="product-details-card">
-                  <div className="row g-2">
+                  <div className="row g-2 align-items-center border-bottom pb-2 mb-2 ">
                     <div className="col-5">
                       <img
                         src={selectedProduct.imgUrl}
@@ -127,17 +127,18 @@ const Product = () => {
                         className="rounded-circle"
                       />
                     </div>
+                    <div className="col-7">
+                      <p>
+                        <strong>Advertiser:</strong>{" "}
+                        {selectedProduct.advertiser}
+                      </p>
+                      <p>
+                        <strong>Cost:</strong> {selectedProduct.cost}
+                      </p>
+                    </div>
                   </div>
 
-                  <p>
-                    <strong>Description:</strong> {selectedProduct.description}
-                  </p>
-                  <p>
-                    <strong>Advertiser:</strong> {selectedProduct.advertiser}
-                  </p>
-                  <p>
-                    <strong>Cost:</strong> {selectedProduct.cost}
-                  </p>
+                  <p>{selectedProduct.description}</p>
                 </div>
               </div>
             </div>

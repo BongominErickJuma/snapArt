@@ -283,9 +283,7 @@ const AllTasks = () => {
                         <strong>Created:</strong> {selectedTask.createdAt}
                       </p>
                     </div>
-                    <p>
-                      <strong>Description:</strong> {selectedTask.description}
-                    </p>
+                    <p>{selectedTask.description}</p>
                     <div className="d-flex align-items-center">
                       <p>
                         <Link

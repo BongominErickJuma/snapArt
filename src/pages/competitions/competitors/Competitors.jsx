@@ -120,7 +120,7 @@ const Competitors = () => {
               </div>
               <div className="modal-body">
                 <div className="contestant-details-card row g-2">
-                  <div className="row g-2 border-bottom pb-2 mb-2">
+                  <div className="row g-2 border-bottom pb-2 mb-2 align-items-center">
                     <div className="col-5">
                       <img
                         src={selectedContestant.profileImage}
