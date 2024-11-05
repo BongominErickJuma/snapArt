@@ -86,7 +86,7 @@ const TasksCompleted = () => {
                   <td>{task.quantity}</td>
                   <td className="text-end">
                     <Link
-                      to={"/snapArt/task_paticipants"}
+                      to={"/snapArt/task_participants"}
                       className="btn btn-sm btn-outline-primary view-btn"
                       onClick={() => openModal(task, "view")}
                     >

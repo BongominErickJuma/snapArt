@@ -62,7 +62,6 @@ const AllComps = () => {
                 <th scope="col">
                   <div className="ms-1">Cover</div>
                 </th>
-                <th scope="col">Title</th>
                 <th scope="col">Start Date</th>
                 <th scope="col">End Date</th>
                 <th scope="col">Votes</th>
@@ -83,8 +82,9 @@ const AllComps = () => {
                       height="32"
                       className="rounded-circle"
                     />
+                    <span className="ms-2">{competition.title}</span>
                   </td>
-                  <td>{competition.title}</td>
+
                   <td>{competition.startDate}</td>
                   <td>{competition.endDate}</td>
                   <td>{competition.votes}</td>
@@ -124,39 +124,52 @@ const AllComps = () => {
                 />
               </div>
               <div className="modal-body">
-                <div className="competition-details-card">
-                  <img
-                    src={selectedCompetition.coverImage}
-                    alt={selectedCompetition.title}
-                    className="img-fluid mb-3"
-                  />
+                <div className="competition-details-card row g-2">
+                  <div className="row g-2 border-bottom pb-2 mb-2">
+                    <div className="col-5">
+                      <img
+                        src={selectedCompetition.coverImage}
+                        alt={selectedCompetition.title}
+                        width={120}
+                        height={120}
+                        className="rounded-circle"
+                      />
+                    </div>
+                    <div className="col-7">
+                      <div>
+                        <strong>Prizes:</strong>
+                        <ul>
+                          {selectedCompetition.prizes.map((prize, index) => (
+                            <li key={index}>
+                              Position {prize.position}: {prize.description}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-5">
+                    <p>
+                      <strong>Start Date:</strong>{" "}
+                      {selectedCompetition.startDate}
+                    </p>
+                    <p>
+                      <strong>End Date:</strong> {selectedCompetition.endDate}
+                    </p>
+                  </div>
+                  <div className="col-7">
+                    <p>
+                      <strong>Votes:</strong> {selectedCompetition.votes}
+                    </p>
+                    <p>
+                      <strong>Contestants:</strong>{" "}
+                      {selectedCompetition.contestants}
+                    </p>
+                  </div>
                   <p>
                     <strong>Description:</strong>{" "}
                     {selectedCompetition.description}
                   </p>
-                  <p>
-                    <strong>Start Date:</strong> {selectedCompetition.startDate}
-                  </p>
-                  <p>
-                    <strong>End Date:</strong> {selectedCompetition.endDate}
-                  </p>
-                  <p>
-                    <strong>Votes:</strong> {selectedCompetition.votes}
-                  </p>
-                  <p>
-                    <strong>Contestants:</strong>{" "}
-                    {selectedCompetition.contestants}
-                  </p>
-                  <div>
-                    <strong>Prizes:</strong>
-                    <ul>
-                      {selectedCompetition.prizes.map((prize, index) => (
-                        <li key={index}>
-                          Position {prize.position}: {prize.description}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>

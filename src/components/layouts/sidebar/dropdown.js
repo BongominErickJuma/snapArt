@@ -23,12 +23,7 @@ const dropdown = [
       {
         label: "Verified",
         linkTo: "/snapArt/verifiedTasks",
-        icon: "bi bi-check-circle-fill", // Solid check circle for completed tasks
-      },
-      {
-        label: "Unverified",
-        linkTo: "/snapArt/unverifiedTasks",
-        icon: "bi bi-check-circle-fill", // Solid check circle for completed tasks
+        icon: "bi bi-check2-circle", // Solid check circle for completed tasks
       },
       {
         label: "Categories",

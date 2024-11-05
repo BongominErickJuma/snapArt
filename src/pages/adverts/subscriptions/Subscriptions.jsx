@@ -60,7 +60,7 @@ const Subscriptions = () => {
             <thead>
               <tr>
                 <th scope="col">
-                  <div className="ms-1">Image</div>
+                  <div className="ms-1">Name</div>
                 </th>
                 <th scope="col">Amount</th>
                 <th scope="col">Is Active</th>

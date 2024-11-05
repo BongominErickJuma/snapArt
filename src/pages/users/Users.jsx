@@ -56,7 +56,6 @@ const User = () => {
                 <th scope="col">
                   <div className="ms-1">Image</div>
                 </th>
-                <th scope="col">Username</th>
                 <th scope="col">Email</th>
                 <th scope="col">Contests</th>
                 <th scope="col">Views</th>
@@ -78,8 +77,8 @@ const User = () => {
                       height="32"
                       className="rounded-circle"
                     />
+                    <span className="ms-2">{user.username}</span>
                   </td>
-                  <td>{user.username}</td>
                   <td>{user.email}</td>
                   <td>{user.contestsCount}</td>
                   <td>{user.totalViewsCount}</td>
@@ -120,40 +119,58 @@ const User = () => {
                 />
               </div>
               <div className="modal-body">
-                <div className="user-details-card">
-                  <img
-                    src={selectedUser.profileImage}
-                    alt={selectedUser.username}
-                    className="img-fluid mb-3 w-100"
-                  />
-                  <p>
-                    <strong>Email:</strong> {selectedUser.email}
-                  </p>
-                  <p>
-                    <strong>Contests Count:</strong>{" "}
-                    {selectedUser.contestsCount}
-                  </p>
-                  <p>
-                    <strong>Total Views:</strong> {selectedUser.totalViewsCount}
-                  </p>
-                  <p>
-                    <strong>Daily Votes:</strong> {selectedUser.dailyVotesCount}
-                  </p>
-                  <p>
-                    <strong>Total Votes:</strong> {selectedUser.totalVotesCount}
-                  </p>
-                  <p>
-                    <strong>Due Date:</strong> {selectedUser.dueDate}
-                  </p>
-                  <p>
-                    <strong>Subscription:</strong> {selectedUser.subscription}
-                  </p>
+                <div className="user-details-card row g-2">
+                  <div className="row g-2 border-bottom pb-2 mb-2">
+                    <div className="col-5">
+                      <img
+                        src={selectedUser.profileImage}
+                        alt={selectedUser.username}
+                        width="120"
+                        height="120"
+                        className="rounded-circle"
+                      />
+                    </div>
+                    <div className="col-7">
+                      <h3>{selectedUser.username}</h3>
+                      <p>
+                        <strong>Email:</strong> {selectedUser.email}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-5">
+                    <p>
+                      <strong>Contests Count:</strong>{" "}
+                      {selectedUser.contestsCount}
+                    </p>
+                    <p>
+                      <strong>Total Views:</strong>{" "}
+                      {selectedUser.totalViewsCount}
+                    </p>
+                    <p>
+                      <strong>Due Date:</strong> {selectedUser.dueDate}
+                    </p>
+                  </div>
+                  <div className="col-7">
+                    <p>
+                      <strong>Total Votes:</strong>{" "}
+                      {selectedUser.totalVotesCount}
+                    </p>
+
+                    <p>
+                      <strong>Daily Votes:</strong>{" "}
+                      {selectedUser.dailyVotesCount}
+                    </p>
+                    <p>
+                      <strong>Subscription:</strong> {selectedUser.subscription}
+                    </p>
+                  </div>
+
                   <div>
                     <strong>Social Links:</strong>
-                    <ul>
+                    <ul className="d-flex align-items-center">
                       {Object.entries(selectedUser.socialLinks).map(
                         ([platform, link]) => (
-                          <li key={platform}>
+                          <li key={platform} className="me-2">
                             <a
                               href={link}
                               target="_blank"

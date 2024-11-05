@@ -62,7 +62,6 @@ const Competitors = () => {
                 <th scope="col">
                   <div className="ms-1">Image</div>
                 </th>
-                <th scope="col">Username</th>
                 <th scope="col">Email</th>
                 <th scope="col">Votes</th>
                 <th scope="col">
@@ -81,8 +80,8 @@ const Competitors = () => {
                       height="32"
                       className="rounded-circle"
                     />
+                    <span className="ms-2">{contestant.username}</span>
                   </td>
-                  <td>{contestant.username}</td>
                   <td>{contestant.email}</td>
                   <td>{contestant.votes}</td>
                   <td className="text-end">
@@ -120,21 +119,30 @@ const Competitors = () => {
                 />
               </div>
               <div className="modal-body">
-                <div className="contestant-details-card">
-                  <img
-                    src={selectedContestant.profileImage}
-                    alt={selectedContestant.username}
-                    className="img-fluid mb-3 w-100"
-                  />
-                  <p>
-                    <strong>Email:</strong> {selectedContestant.email}
-                  </p>
-                  <p>
-                    <strong>Votes:</strong> {selectedContestant.votes}
-                  </p>
-                  <p>
-                    <strong>Role:</strong> {selectedContestant.role}
-                  </p>
+                <div className="contestant-details-card row g-2">
+                  <div className="row g-2 border-bottom pb-2 mb-2">
+                    <div className="col-5">
+                      <img
+                        src={selectedContestant.profileImage}
+                        alt={selectedContestant.username}
+                        width={120}
+                        height={120}
+                        className="rounded-circle"
+                      />
+                    </div>
+                    <div className="col-7">
+                      <p>
+                        <strong>Email:</strong> {selectedContestant.email}
+                      </p>
+                      <p>
+                        <strong>Votes:</strong> {selectedContestant.votes}
+                      </p>
+                      <p>
+                        <strong>Role:</strong> {selectedContestant.role}
+                      </p>
+                    </div>
+                  </div>
+
                   <p>
                     <strong>Reason:</strong> {selectedContestant.reason}
                   </p>
@@ -144,10 +152,10 @@ const Competitors = () => {
                   </p>
                   <div>
                     <strong>Social Links:</strong>
-                    <ul>
+                    <ul className="d-flex align-items-center">
                       {Object.entries(selectedContestant.socialLinks).map(
                         ([platform, link]) => (
-                          <li key={platform}>
+                          <li key={platform} className="me-2">
                             <a
                               href={link}
                               target="_blank"

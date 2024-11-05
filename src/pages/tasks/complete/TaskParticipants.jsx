@@ -148,45 +148,19 @@ const TaskParticipants = () => {
 
                   <div className="col-lg-5">
                     <p>
-                      <strong>Unit Cost:</strong> {selectedUser.unitCost}
+                      <strong>Quantity:</strong> {selectedUser.quantity}
                     </p>
 
                     <p>
-                      <strong>Unit Cost:</strong> {selectedUser.unitCost}
-                    </p>
-                    <p>
-                      <strong>Reward Asset:</strong> {selectedUser.baseAsset}
+                      <strong>Reward:</strong> {selectedUser.reward}
                     </p>
                   </div>
                   <div className="col-lg-6">
                     <p>
-                      <strong>Task Status:</strong>{" "}
-                      {selectedUser.inactive ? "active" : "inactive"}
+                      <strong>Status:</strong> {selectedUser.status}
                     </p>
                     <p>
-                      <strong>Category:</strong> {selectedUser.category}
-                    </p>
-                    <p>
-                      <strong>Created:</strong> {selectedUser.createdAt}
-                    </p>
-                  </div>
-                  <p>
-                    <strong>Description:</strong> {selectedUser.description}
-                  </p>
-                  <div className="d-flex align-items-center">
-                    <p>
-                      <Link
-                        to={`${selectedUser.link}`}
-                        color="text-info"
-                        target="_blank"
-                      >
-                        Link
-                      </Link>
-                    </p>
-                    <p className="ms-2">
-                      <Link to={`/snapArt/task_participants`} color="text-info">
-                        Participants
-                      </Link>
+                      <strong>Created:</strong> {selectedUser.date}
                     </p>
                   </div>
                 </div>

@@ -59,7 +59,6 @@ const Product = () => {
                 <th scope="col">
                   <div className="ms-1">Cover</div>
                 </th>
-                <th scope="col">Product Name</th>
                 <th scope="col">Advertiser</th>
                 <th scope="col">Cost</th>
                 <th scope="col">
@@ -78,8 +77,8 @@ const Product = () => {
                       height="32"
                       className="rounded-circle"
                     />
+                    <span className="ms-2">{product.productName}</span>
                   </td>
-                  <td>{product.productName}</td>
                   <td>{product.advertiser}</td>
                   <td>{product.cost}</td>
                   <td className="text-end">
@@ -118,11 +117,18 @@ const Product = () => {
               </div>
               <div className="modal-body">
                 <div className="product-details-card">
-                  <img
-                    src={selectedProduct.imgUrl}
-                    alt={selectedProduct.productName}
-                    className="img-fluid mb-3"
-                  />
+                  <div className="row g-2">
+                    <div className="col-5">
+                      <img
+                        src={selectedProduct.imgUrl}
+                        alt={selectedProduct.productName}
+                        width="120"
+                        height="120"
+                        className="rounded-circle"
+                      />
+                    </div>
+                  </div>
+
                   <p>
                     <strong>Description:</strong> {selectedProduct.description}
                   </p>

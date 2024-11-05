@@ -59,7 +59,6 @@ const AllAdverts = () => {
                 <th scope="col">
                   <div className="ms-1"> Cover</div>
                 </th>
-                <th scope="col">Business Name</th>
                 <th scope="col">Address</th>
                 <th scope="col">Contact</th>
                 <th scope="col">Expiry Date</th>
@@ -80,8 +79,8 @@ const AllAdverts = () => {
                       height="32"
                       className="rounded-circle"
                     />
+                    <span className="ms-2">{advert.businessName}</span>
                   </td>
-                  <td>{advert.businessName}</td>
                   <td>{advert.address}</td>
                   <td>{advert.contact}</td>
                   <td>{advert.expiryDate}</td>
@@ -121,61 +120,58 @@ const AllAdverts = () => {
                 />
               </div>
               <div className="modal-body">
-                <div className="advert-details-card">
-                  <img
-                    src={selectedAdvert.coverImage}
-                    alt={`${selectedAdvert.businessName} Cover`}
-                    className="img-fluid mb-3 w-100"
-                  />
-                  <p>
-                    <strong>Address:</strong> {selectedAdvert.address}
-                  </p>
-                  <p>
-                    <strong>Contact:</strong> {selectedAdvert.contact}
-                  </p>
-                  <p>
-                    <strong>Website:</strong>{" "}
-                    <a
-                      href={selectedAdvert.websiteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {selectedAdvert.websiteUrl}
-                    </a>
-                  </p>
-                  <p>
-                    <strong>Social Media:</strong>
-                  </p>
-                  <ul>
-                    <li>
-                      <strong>TikTok:</strong> {selectedAdvert.tiktok}
-                    </li>
-                    <li>
-                      <strong>Twitter:</strong> {selectedAdvert.twitter}
-                    </li>
-                    <li>
-                      <strong>Instagram:</strong> {selectedAdvert.instagram}
-                    </li>
-                    <li>
-                      <strong>Facebook:</strong> {selectedAdvert.facebook}
-                    </li>
-                  </ul>
+                <div className="advert-details-card row g-2">
+                  <div className="row g-2 border-bottom pb-2 mb-2">
+                    <div className="col-5">
+                      {" "}
+                      <img
+                        src={selectedAdvert.coverImage}
+                        alt={`${selectedAdvert.businessName} Cover`}
+                        width="120"
+                        height="120"
+                        className="rounded-circle"
+                      />
+                    </div>
+                    <div className="col-7">
+                      <p>
+                        <strong>Address:</strong> {selectedAdvert.address}
+                      </p>
+
+                      <p>
+                        <strong>Website:</strong>{" "}
+                        <a
+                          href={selectedAdvert.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {selectedAdvert.websiteUrl}
+                        </a>
+                      </p>
+                    </div>
+                  </div>
                   <p>
                     <strong>About:</strong> {selectedAdvert.about}
-                  </p>
-                  <p>
-                    <strong>Period:</strong> {selectedAdvert.period}
-                  </p>
-                  <p>
-                    <strong>Expiry Date:</strong> {selectedAdvert.expiryDate}
-                  </p>
-                  <p>
-                    <strong>Views Count:</strong> {selectedAdvert.viewsCount}
                   </p>
                   <p>
                     <strong>Products:</strong>{" "}
                     {selectedAdvert.products.join(", ")}
                   </p>
+                  <div className="col-5">
+                    <p>
+                      <strong>Period:</strong> {selectedAdvert.period}
+                    </p>
+                    <p>
+                      <strong>Expiry Date:</strong> {selectedAdvert.expiryDate}
+                    </p>
+                  </div>
+                  <div className="col-7">
+                    <p>
+                      <strong>Views Count:</strong> {selectedAdvert.viewsCount}
+                    </p>
+                    <p>
+                      <strong>Contact:</strong> {selectedAdvert.contact}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
