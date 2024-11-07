@@ -14,7 +14,7 @@
       "name": "Annual Plan",
       "description": "Access to all features with a yearly discount.",
       "amount": "$99.99",
-      "isActive": true,
+      "isActive": false,
       "creationDate": "2022-06-10",
       "lastModified": "2023-06-10"
     }

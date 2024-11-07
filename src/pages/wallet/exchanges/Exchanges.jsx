@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const Exchanges = () => {
   const [selectedExchange, setSelectedExchange] = useState(null);
@@ -42,6 +43,12 @@ const Exchanges = () => {
           />
           <button className="search-btn">Search</button>
         </form>
+        <button
+          className="btn btn-sm btn-primary"
+          onClick={() => openModal(addProduct, "add-pdt")}
+        >
+          Create More
+        </button>
       </div>
 
       {loading && <p>Loading Exchanges...</p>}
@@ -135,6 +142,16 @@ const Exchanges = () => {
                     <strong>Last Modified:</strong>{" "}
                     {selectedExchange.lastModified}
                   </p>
+                  <div className="row g-2">
+                    <div className="col-6">
+                      <Link className="btn btn-sm view-btn w-100">Edit</Link>
+                    </div>
+                    <div className="col-6">
+                      <Link className="btn btn-sm view-btn btn-outline-danger w-100">
+                        Delete
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

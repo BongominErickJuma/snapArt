@@ -70,7 +70,16 @@ const Accounts = () => {
             <tbody>
               {filteredAccounts.map((account) => (
                 <tr key={account.id}>
-                  <td>{account.accountHolderName}</td>
+                  <td>
+                    <img
+                      src={account.userImage}
+                      alt={account.accountHolderName}
+                      width="32"
+                      height="32"
+                      className="rounded-circle"
+                    />
+                    <span className="ms-2">{account.accountHolderName}</span>
+                  </td>
                   <td>{account.dateCreated}</td>
                   <td>{account.lastModified}</td>
                   <td>{account.userId}</td>
@@ -113,21 +122,24 @@ const Accounts = () => {
               <div className="modal-body">
                 {selectedAccount && (
                   <div className="account-details-card">
-                    <p>
-                      <strong>Account Holder Name:</strong>{" "}
-                      {selectedAccount.accountHolderName}
-                    </p>
-                    <p>
-                      <strong>Date Created:</strong>{" "}
-                      {selectedAccount.dateCreated}
-                    </p>
-                    <p>
-                      <strong>Last Modified:</strong>{" "}
-                      {selectedAccount.lastModified}
-                    </p>
-                    <p>
-                      <strong>User ID:</strong> {selectedAccount.userId}
-                    </p>
+                    <div className="row g-2 border-bottom pb-2 mb-2 align-items-center">
+                      <div className="col-5">
+                        <img
+                          src={selectedAccount.userImage}
+                          alt={selectedAccount.accountHolderName}
+                          width="120"
+                          height="120"
+                          className="rounded-circle"
+                        />
+                      </div>
+                      <div className="col-7">
+                        <h3>{selectedAccount.accountHolderName}</h3>
+                        <p>
+                          <strong>ID:</strong> {selectedAccount.userId}
+                        </p>
+                      </div>
+                    </div>
+
                     <h6>Holdings:</h6>
                     <ul>
                       {selectedAccount.holdings.map((holding) => (

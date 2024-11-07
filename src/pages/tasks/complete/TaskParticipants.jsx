@@ -146,23 +146,30 @@ const TaskParticipants = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-5">
+                  <div className="col-lg-3">
                     <p>
                       <strong>Quantity:</strong> {selectedUser.quantity}
                     </p>
-
+                  </div>
+                  <div className="col-lg-3">
                     <p>
                       <strong>Reward:</strong> {selectedUser.reward}
                     </p>
                   </div>
                   <div className="col-lg-6">
                     <p>
-                      <strong>Status:</strong> {selectedUser.status}
-                    </p>
-                    <p>
                       <strong>Created:</strong> {selectedUser.date}
                     </p>
                   </div>
+                  <p>
+                    {selectedUser.status.toLowerCase() === "verified" ? (
+                      <Link className="btn btn-sm view-btn w-100">Suspend</Link>
+                    ) : (
+                      <Link className="btn btn-sm btn-outline-primary w-100">
+                        Verify
+                      </Link>
+                    )}
+                  </p>
                 </div>
               </div>
             </div>

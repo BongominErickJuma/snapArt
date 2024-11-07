@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const AllAdverts = () => {
   const [selectedAdvert, setSelectedAdvert] = useState(null);
@@ -122,7 +123,7 @@ const AllAdverts = () => {
               <div className="modal-body">
                 <div className="advert-details-card row g-2">
                   <div className="row g-2 border-bottom pb-2 mb-2 align-items-center">
-                    <div className="col-5">
+                    <div className="col-4">
                       {" "}
                       <img
                         src={selectedAdvert.coverImage}
@@ -132,29 +133,34 @@ const AllAdverts = () => {
                         className="rounded-circle"
                       />
                     </div>
-                    <div className="col-7">
+                    <div className="col-8">
                       <p>
                         <strong>Address:</strong> {selectedAdvert.address}
                       </p>
-
                       <p>
-                        <strong>Website:</strong>{" "}
-                        <a
-                          href={selectedAdvert.websiteUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <strong>Product:</strong>{" "}
+                        <Link
+                          to={`/snapArt/advertisedProduct`}
+                          color="text-info"
                         >
-                          {selectedAdvert.websiteUrl}
-                        </a>
+                          {selectedAdvert.product}
+                        </Link>
                       </p>
                     </div>
                   </div>
                   <p>
                     <strong>About:</strong> {selectedAdvert.about}
                   </p>
+
                   <p>
-                    <strong>Products:</strong>{" "}
-                    {selectedAdvert.products.join(", ")}
+                    <strong>Website:</strong>{" "}
+                    <a
+                      href={selectedAdvert.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {selectedAdvert.websiteUrl}
+                    </a>
                   </p>
                   <div className="col-5">
                     <p>
@@ -171,6 +177,27 @@ const AllAdverts = () => {
                     <p>
                       <strong>Contact:</strong> {selectedAdvert.contact}
                     </p>
+                  </div>
+                  <div className="row g-2">
+                    <div className="col-4">
+                      {selectedAdvert.status.toLowerCase() === "verified" ? (
+                        <Link className="btn btn-sm btn-outline-primary w-100">
+                          Suspend
+                        </Link>
+                      ) : (
+                        <Link className="btn btn-sm btn-outline-primary w-100">
+                          Verify
+                        </Link>
+                      )}
+                    </div>
+                    <div className="col-4">
+                      <Link className="btn btn-sm view-btn w-100">Edit</Link>
+                    </div>
+                    <div className="col-4">
+                      <Link className="btn btn-sm view-btn btn-outline-danger w-100">
+                        Delete
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

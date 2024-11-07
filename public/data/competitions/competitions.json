@@ -8,6 +8,7 @@
       "startDate": "2023-01-01",
       "endDate": "2023-01-15",
       "votes": 520,
+      "isActive": true,
       "contestants": 30,
       "prizes": [
         {
@@ -28,6 +29,7 @@
       "startDate": "2023-03-10",
       "endDate": "2023-03-20",
       "votes": 1050,
+      "isActive": false,
       "contestants": 45,
       "prizes": [
         {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const Subscriptions = () => {
   const [selectedSubscription, setSelectedSubscription] = useState(null);
@@ -42,6 +43,12 @@ const Subscriptions = () => {
           />
           <button className="search-btn">Search</button>
         </form>
+        <button
+          className="btn btn-sm btn-primary"
+          onClick={() => openModal(addProduct, "add-pdt")}
+        >
+          Create More
+        </button>
       </div>
 
       {loading && <p>Loading Subscriptions...</p>}
@@ -134,6 +141,28 @@ const Subscriptions = () => {
                     <strong>Last Modified:</strong>{" "}
                     {selectedSubscription.lastModified}
                   </p>
+
+                  <div className="row g-2">
+                    <div className="col-4">
+                      {selectedSubscription.isActive ? (
+                        <Link className="btn btn-sm btn-outline-primary w-100">
+                          Deactivate
+                        </Link>
+                      ) : (
+                        <Link className="btn btn-sm btn-outline-primary w-100">
+                          Activate
+                        </Link>
+                      )}
+                    </div>
+                    <div className="col-4">
+                      <Link className="btn btn-sm view-btn w-100">Edit</Link>
+                    </div>
+                    <div className="col-4">
+                      <Link className="btn btn-sm view-btn btn-outline-danger w-100">
+                        Delete
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -40,6 +40,8 @@ import Payments from "./pages/transactions/payments/Payments";
 import Holding from "./pages/wallet/holding/Holding";
 import Users from "./pages/users/Users";
 import TaskParticipants from "./pages/tasks/complete/TaskParticipants";
+import ProductDetail from "./pages/adverts/products/ProductDetail";
+import CompetitorDetail from "./pages/competitions/competitors/CompetitorDetails";
 
 // Function to check if the current path is valid, including dynamic segments
 const isPathValid = (currentPath) => {
@@ -83,7 +85,6 @@ const App = () => {
           {/* Public route */}
           <Route exact path="/snapArt/" element={<Login />} />
           <Route path="/snapArt/signup" element={<SignUp />} />
-
           {/* Protected routes */}
           <Route
             path="/snapArt/dashboard"
@@ -158,6 +159,14 @@ const App = () => {
             }
           />
           <Route
+            path="/snapArt/advertisedProduct"
+            element={
+              <ProtectedRoute>
+                <ProductDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/snapArt/subscriptions"
             element={
               <ProtectedRoute>
@@ -197,11 +206,20 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/snapArt/competitors"
             element={
               <ProtectedRoute>
                 <Competitors />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/snapArt/competitor_details"
+            element={
+              <ProtectedRoute>
+                <CompetitorDetail />
               </ProtectedRoute>
             }
           />

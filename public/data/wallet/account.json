@@ -6,6 +6,7 @@
       "dateCreated": "2023-11-15",
       "lastModified": "2024-10-01",
       "userId": "123",
+      "userImage": "https://via.placeholder.com/150?text=John+Doe",
       "holdings": [
         {
           "id": "1",
@@ -29,6 +30,7 @@
       "dateCreated": "2023-07-20",
       "lastModified": "2024-09-28",
       "userId": "456",
+      "userImage": "https://via.placeholder.com/150?text=Jane+Smith",
       "holdings": [
         {
           "id": "3",
@@ -45,6 +47,7 @@
       "dateCreated": "2023-03-05",
       "lastModified": "2024-08-20",
       "userId": "789",
+      "userImage": "https://via.placeholder.com/150?text=Alice+Johnson",
       "holdings": [
         {
           "id": "4",

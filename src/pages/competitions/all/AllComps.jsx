@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const AllComps = () => {
   const [selectedCompetition, setSelectedCompetition] = useState(null);
@@ -42,6 +43,12 @@ const AllComps = () => {
           />
           <button className="search-btn">Search</button>
         </form>
+        <button
+          className="btn btn-sm btn-primary"
+          onClick={() => openModal(addProduct, "add-pdt")}
+        >
+          Create More
+        </button>
       </div>
 
       {loading && <p>Loading Competitions...</p>}
@@ -64,6 +71,7 @@ const AllComps = () => {
                 </th>
                 <th scope="col">Start Date</th>
                 <th scope="col">End Date</th>
+                <th scope="col">Is Active</th>
                 <th scope="col">Votes</th>
                 <th scope="col">Contestants</th>
                 <th scope="col">
@@ -84,9 +92,9 @@ const AllComps = () => {
                     />
                     <span className="ms-2">{competition.title}</span>
                   </td>
-
                   <td>{competition.startDate}</td>
                   <td>{competition.endDate}</td>
+                  <td>{competition.isActive ? "Active" : "Inactive"}</td>
                   <td>{competition.votes}</td>
                   <td>{competition.contestants}</td>
                   <td className="text-end">
@@ -162,14 +170,37 @@ const AllComps = () => {
                       <strong>Votes:</strong> {selectedCompetition.votes}
                     </p>
                     <p>
-                      <strong>Contestants:</strong>{" "}
-                      {selectedCompetition.contestants}
+                      <Link to={"/snapArt/task_participants"}>
+                        View Contestants
+                      </Link>
                     </p>
                   </div>
                   <p>
                     <strong>Description:</strong>{" "}
                     {selectedCompetition.description}
                   </p>
+
+                  <div className="row g-2">
+                    <div className="col-4">
+                      {selectedCompetition.isActive ? (
+                        <Link className="btn btn-sm btn-outline-primary w-100">
+                          Deactivate
+                        </Link>
+                      ) : (
+                        <Link className="btn btn-sm btn-outline-primary w-100">
+                          Activate
+                        </Link>
+                      )}
+                    </div>
+                    <div className="col-4">
+                      <Link className="btn btn-sm view-btn w-100">Edit</Link>
+                    </div>
+                    <div className="col-4">
+                      <Link className="btn btn-sm view-btn btn-outline-danger w-100">
+                        Delete
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

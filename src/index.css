@@ -237,9 +237,19 @@ ul > li {
   color: var(--surface-color) !important;
   border: 2px solid var(--background-color-deep-hover) !important;
 }
+.view-btn:hover {
+  color: var(--surface-color) !important;
+  border: 2px solid var(--background-color) !important;
+}
 .btn-outline-danger.view-btn {
   color: var(--danger-color) !important;
-  border: 1px solid var(--danger-color) !important;
+  border: 2px solid var(--danger-color) !important;
+}
+
+.btn-outline-danger.view-btn:hover {
+  color: var(--default-color) !important;
+  background-color: var(--danger-color) !important;
+  border: 2px solid var(--danger-color) !important;
 }
 
 .view-btn:active,
