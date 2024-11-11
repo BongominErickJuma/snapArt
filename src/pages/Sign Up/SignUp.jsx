@@ -22,11 +22,11 @@ const Login = () => {
 
       <form onSubmit={handleSignUp} className="w-25">
         <div className="form-group">
-          <label>Name</label>
+          <label>Email</label>
           <input
-            type="text"
-            name="name"
-            placeholder="Enter Your name"
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
             className="form-control"
             required
           />

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../../../hooks/useFetch";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../contexts/AuthContex";
 
 const AllTasks = () => {
+  const { token } = useAuth();
   const [selectedTask, setSelectedTask] = useState(null);
   const [editingTask, setEditingTask] = useState(null);
   const [tasks, setTasks] = useState(null);
@@ -20,8 +22,10 @@ const AllTasks = () => {
     created: "",
   });
   const [fetchUrl, setFetchUrl] = useState({
-    url: import.meta.env.VITE_GET_MY_TASKS,
-    options: {},
+    url: import.meta.env.VITE_GET_TASKS,
+    options: {
+      token,
+    },
   });
 
   const { data, error, loading } = useFetch(fetchUrl.url, fetchUrl.options);
@@ -29,7 +33,8 @@ const AllTasks = () => {
   useEffect(() => {
     document.title = "sNup Earn | My Tasks";
     if (data) {
-      setTasks(data.my_tasks);
+      setTasks(data);
+      console.log(data);
     }
   }, [data]);
 
@@ -358,7 +363,12 @@ const AllTasks = () => {
               <div className="modal-footer">
                 <div className="row g-2 w-100">
                   <div className="col-lg-4">
-                    <button className="btn btn-primary w-100">Cancel</button>
+                    <button
+                      className="btn btn-primary w-100"
+                      onClick={closeModal}
+                    >
+                      Cancel
+                    </button>
                   </div>
                   <div className="col-lg-4">
                     <button className="btn btn-info w-100">

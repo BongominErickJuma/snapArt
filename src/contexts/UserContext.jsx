@@ -7,16 +7,16 @@ const UserContext = createContext();
 const UserProvider = ({ children }) => {
   // Initialize state with localStorage check
   const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem("user");
+    const savedUser = localStorage.getItem("classUser");
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
   // Sync user state with localStorage whenever user changes
   useEffect(() => {
     if (user) {
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("classUser", JSON.stringify(user));
     } else {
-      localStorage.removeItem("user");
+      localStorage.removeItem("classUser");
     }
   }, [user]);
 

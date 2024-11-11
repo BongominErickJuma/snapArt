@@ -1,7 +1,17 @@
-import React, { useContext } from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContex";
 
-const ProtectedRoute = ({ children }) => {
-  return children;
+const ProtectedRoute = () => {
+  const { token } = useAuth();
+
+  // Check if the user is authenticated
+  if (!token) {
+    // If not authenticated, redirect to the login page
+    return <Navigate to="/snapArt" />;
+  }
+
+  // If authenticated, render the child routes
+  return <Outlet />;
 };
 
 export default ProtectedRoute;

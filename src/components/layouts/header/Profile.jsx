@@ -1,12 +1,12 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleLogOut = () => {
-    navigate("/snapArt/");
-  };
+  // const handleLogOut = () => {
+  //   navigate("/snapArt/");
+  // };
 
   return (
     <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -33,7 +33,7 @@ const Profile = () => {
       <li>
         <Link
           className="dropdown-item d-flex align-items-center"
-          onClick={handleLogOut}
+          // onClick={handleLogOut}
         >
           <i className="bi bi-box-arrow-right"></i>
           <span>Sign Out</span>

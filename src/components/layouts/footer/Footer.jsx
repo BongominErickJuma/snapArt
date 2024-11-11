@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="copyright">
         &copy; Copyright{" "}
         <strong>
-          <span>NexaERP {new Date().getFullYear()}</span>
+          <span>sNAP EARN {new Date().getFullYear()}</span>
         </strong>
         . All Rights Reserved
       </div>
