@@ -42,6 +42,7 @@ const Login = () => {
       }
 
       // Assuming data is JSON if it is successful and contains the token
+      localStorage.setItem("token", data);
       setToken(data);
       navigate("/snapArt/dashboard", { replace: true });
     } catch (err) {

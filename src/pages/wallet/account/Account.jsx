@@ -13,7 +13,7 @@ const Accounts = () => {
   useEffect(() => {
     document.title = "sNup Earn | Accounts";
     if (data) {
-      setAccounts(data.accounts);
+      setAccounts(data);
     }
   }, [data]);
 
@@ -73,14 +73,14 @@ const Accounts = () => {
                   <td>
                     <img
                       src={account.userImage}
-                      alt={account.accountHolderName}
+                      alt=""
                       width="32"
                       height="32"
                       className="rounded-circle"
                     />
                     <span className="ms-2">{account.accountHolderName}</span>
                   </td>
-                  <td>{account.dateCreated}</td>
+                  <td>{account.createdAt.split("T")[0]}</td>
                   <td>{account.lastModified}</td>
                   <td>{account.userId}</td>
                   <td className="text-end">

@@ -1,8 +1,16 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   base: "/snapArt",
   plugins: [react()],
+  server: {
+    proxy: {
+      "/api/v1": {
+        target: "https://snapearn.online",
+        changeOrigin: true,
+        secure: true,
+      },
+    },
+  },
 });

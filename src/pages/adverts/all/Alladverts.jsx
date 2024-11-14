@@ -14,7 +14,7 @@ const AllAdverts = () => {
   useEffect(() => {
     document.title = "sNup Earn | Advertisements";
     if (data) {
-      setAdverts(data.adverts);
+      setAdverts(data);
     }
   }, [data]);
 
@@ -58,7 +58,7 @@ const AllAdverts = () => {
             <thead>
               <tr>
                 <th scope="col">
-                  <div className="ms-1"> Cover</div>
+                  <div className="ms-1">Cover</div>
                 </th>
                 <th scope="col">Address</th>
                 <th scope="col">Contact</th>
@@ -84,8 +84,8 @@ const AllAdverts = () => {
                   </td>
                   <td>{advert.address}</td>
                   <td>{advert.contact}</td>
-                  <td>{advert.expiryDate}</td>
-                  <td>{advert.viewsCount}</td>
+                  <td>{advert.expiryDate.split("T")[0]}</td>
+                  <td>{advert.views}</td>
                   <td className="text-end">
                     <button
                       className="btn btn-sm btn-outline-primary view-btn"
@@ -138,7 +138,7 @@ const AllAdverts = () => {
                         <strong>Address:</strong> {selectedAdvert.address}
                       </p>
                       <p>
-                        <strong>Product:</strong>{" "}
+                        <strong>Products:</strong>{" "}
                         <Link
                           to={`/snapArt/advertisedProduct`}
                           color="text-info"
@@ -167,33 +167,23 @@ const AllAdverts = () => {
                       <strong>Period:</strong> {selectedAdvert.period}
                     </p>
                     <p>
-                      <strong>Expiry Date:</strong> {selectedAdvert.expiryDate}
+                      <strong>Expiry Date:</strong>{" "}
+                      {selectedAdvert.expiryDate.split("T")[0]}
                     </p>
                   </div>
                   <div className="col-7">
                     <p>
-                      <strong>Views Count:</strong> {selectedAdvert.viewsCount}
+                      <strong>Views Count:</strong> {selectedAdvert.views}
                     </p>
                     <p>
                       <strong>Contact:</strong> {selectedAdvert.contact}
                     </p>
                   </div>
                   <div className="row g-2">
-                    <div className="col-4">
-                      {selectedAdvert.status.toLowerCase() === "verified" ? (
-                        <Link className="btn btn-sm btn-outline-primary w-100">
-                          Suspend
-                        </Link>
-                      ) : (
-                        <Link className="btn btn-sm btn-outline-primary w-100">
-                          Verify
-                        </Link>
-                      )}
-                    </div>
-                    <div className="col-4">
+                    <div className="col-6">
                       <Link className="btn btn-sm view-btn w-100">Edit</Link>
                     </div>
-                    <div className="col-4">
+                    <div className="col-6">
                       <Link className="btn btn-sm view-btn btn-outline-danger w-100">
                         Delete
                       </Link>

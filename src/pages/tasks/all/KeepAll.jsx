@@ -34,6 +34,7 @@ const AllTasks = () => {
     document.title = "sNup Earn | My Tasks";
     if (data) {
       setTasks(data);
+      console.log(data);
     }
   }, [data]);
 
@@ -60,39 +61,6 @@ const AllTasks = () => {
     });
     window.location.reload();
     closeModal();
-  };
-
-  const handleVerifyTask = async (e, id) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch(
-        `${import.meta.env.VITE_VERIFY_TASK}/${parseInt(id, 10)}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to verify task");
-      }
-
-      // Optionally, re-fetch or update the tasks state if needed
-      const updatedTask = await response.json();
-      setTasks((prevTasks) =>
-        prevTasks.map((task) =>
-          task.id === updatedTask.id ? updatedTask : task
-        )
-      );
-
-      closeModal();
-    } catch (error) {
-      console.error("Error verifying task:", error);
-    }
   };
 
   const handleUpdate = (e) => {
@@ -136,7 +104,7 @@ const AllTasks = () => {
 
   const filteredTasks = tasks
     ? tasks.filter((task) =>
-        task.title.toLowerCase().includes(searchQuery.toLowerCase())
+        task.name.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : [];
 
@@ -155,7 +123,7 @@ const AllTasks = () => {
         </form>
         <button
           className="btn btn-sm btn-primary"
-          // onClick={() => openModal(addTask, "add-task")}
+          onClick={() => openModal(addTask, "add-task")}
         >
           Create More
         </button>
@@ -177,11 +145,12 @@ const AllTasks = () => {
                 </th>
                 <th>Category</th>
                 <th>Payment</th>
-                <th>Unit Cost</th>
+                <th>Status</th>
+                <th>Quantity</th>
                 <th>Progress</th>
                 <th>Link</th>
                 <th scope="col">
-                  <div className="text-end me-2">Action</div>
+                  <div className="text-end me-2"> Action</div>
                 </th>
               </tr>
             </thead>
@@ -190,47 +159,48 @@ const AllTasks = () => {
                 <tr key={task.id}>
                   <td>
                     <img
-                      src={task.user.profileImg}
-                      alt=""
+                      src={task.image}
+                      alt={task.name}
                       width="32"
                       height="32"
                       className="rounded-circle"
                     />
-                    <span className="ms-2">{task.title}</span>
+                    <span className="ms-2">{task.name}</span>
                   </td>
-                  <td>{task.category.name}</td>
+                  <td>{task.category}</td>
                   <td>
                     <div
-                      className={`fw-bold ${
-                        task.paymentStatus.toLowerCase() === "successful"
+                      className={`text-uppercase fw-bold ${
+                        task.payment.toLowerCase() === "paid"
                           ? "text-success"
-                          : task.paymentStatus.toLowerCase() === "pending"
+                          : task.payment.toLowerCase() === "pending"
                           ? "text-info"
-                          : task.paymentStatus.toLowerCase() === "unsuccessful"
+                          : task.payment.toLowerCase() === "failed"
                           ? "text-danger"
                           : ""
                       }`}
                     >
-                      {task.paymentStatus}
+                      {task.payment}
                     </div>
                   </td>
-                  <td>{task.unitCost}</td>
-                  <td
-                    className={`fw-bold ${
-                      task.taskStatus.toLowerCase() === "in_progress"
-                        ? "text-info"
-                        : ""
-                    }`}
-                  >
-                    {task.taskStatus}
+                  <td>
+                    <div
+                      className={`text-uppercase fw-bold ${
+                        task.inactive ? "text-info" : "text-grey"
+                      }`}
+                    >
+                      {`${task.inactive ? "active" : "inactive"}`}
+                    </div>
                   </td>
+                  <td>{task.quantity}</td>
+                  <td>{task.progress}</td>
                   <td>
                     <Link
                       to={`${task.link}`}
                       className="text-white"
                       target="_blank"
                     >
-                      check
+                      Take
                     </Link>
                   </td>
                   <td className="text-end">
@@ -275,8 +245,8 @@ const AllTasks = () => {
                     <div className="row g-2 border-bottom pb-2 mb-2">
                       <div className="col-5">
                         <img
-                          src={selectedTask.user.profileImg}
-                          alt=""
+                          src={selectedTask.image}
+                          alt={selectedTask.name}
                           width="120"
                           height="120"
                           className="rounded-circle"
@@ -286,7 +256,7 @@ const AllTasks = () => {
                         <h3>{selectedTask.user.username}</h3>
                         <p>
                           <strong>Subscription:</strong>{" "}
-                          {selectedTask.user.subscriptionName}
+                          {selectedTask.user.subscriptions}
                         </p>
                         <p>
                           <strong>Email:</strong> {selectedTask.user.email}
@@ -298,24 +268,24 @@ const AllTasks = () => {
                       <p>
                         <strong>Unit Cost:</strong> {selectedTask.unitCost}
                       </p>
+
                       <p>
-                        <strong>Reward:</strong> {selectedTask.reward}
+                        <strong>Unit Cost:</strong> {selectedTask.unitCost}
                       </p>
                       <p>
-                        <strong>Reward Asset:</strong>{" "}
-                        {selectedTask.rewardAsset}
+                        <strong>Reward Asset:</strong> {selectedTask.baseAsset}
                       </p>
                     </div>
                     <div className="col-lg-6">
                       <p>
-                        <strong>Verification:</strong> {selectedTask.taskStatus}
+                        <strong>Task Status:</strong>{" "}
+                        {selectedTask.inactive ? "active" : "inactive"}
                       </p>
                       <p>
-                        <strong>Category:</strong> {selectedTask.category.name}
+                        <strong>Category:</strong> {selectedTask.category}
                       </p>
                       <p>
-                        <strong>Created:</strong>{" "}
-                        {selectedTask.category.createdAt.split("T")[0]}
+                        <strong>Created:</strong> {selectedTask.createdAt}
                       </p>
                     </div>
                     <p>{selectedTask.description}</p>
@@ -401,10 +371,7 @@ const AllTasks = () => {
                     </button>
                   </div>
                   <div className="col-lg-4">
-                    <button
-                      className="btn btn-info w-100"
-                      onClick={(e) => handleVerifyTask(e, selectedTask.id)}
-                    >
+                    <button className="btn btn-info w-100">
                       {" "}
                       {selectedTask.inactive ? "Unverify" : "Verify"}
                     </button>
