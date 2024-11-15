@@ -3,9 +3,16 @@ import useFetch from "../../../hooks/useFetch";
 import { Link } from "react-router-dom";
 
 const Product = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const [products, setProducts] = useState(null);
-  const [addProduct, setAddProduct] = useState(null);
+  const [addProduct, setAddProduct] = useState({
+    productName: "",
+    imgUrl: "",
+    description: "",
+    advertiser: "",
+    cost: "",
+  });
+  const [addingProduct, setAddingProduct] = useState(null);
+
   const { data, error, loading } = useFetch(
     import.meta.env.VITE_GET_PRODUCTS,
     {}
@@ -20,11 +27,23 @@ const Product = () => {
   }, [data]);
 
   const openModal = (product) => {
-    setSelectedProduct(product);
+    setAddingProduct(product);
   };
 
   const closeModal = () => {
-    setSelectedProduct(null);
+    setAddingProduct(null);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setAddProduct((prevProduct) => ({
+      ...prevProduct,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   const filteredProducts = products?.filter((product) =>
@@ -106,7 +125,7 @@ const Product = () => {
         !loading && <p>No Products Available</p>
       )}
 
-      {selectedProduct && (
+      {addingProduct && (
         <div
           className="modal fade show custom-modal"
           tabIndex="-1"
@@ -116,7 +135,7 @@ const Product = () => {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content animate-modal">
               <div className="modal-header bg-primary text-white">
-                <h5 className="modal-title">{`Details for ${selectedProduct.productName}`}</h5>
+                <h5 className="modal-title">Add Product</h5>
                 <button
                   type="button"
                   className="btn-close"
@@ -125,50 +144,93 @@ const Product = () => {
               </div>
               <div className="modal-body">
                 <div className="product-details-card">
-                  <div className="row g-2 align-items-center border-bottom pb-2 mb-2 ">
-                    <div className="col-5">
-                      <img
-                        src={selectedProduct.imgUrl}
-                        alt={selectedProduct.productName}
-                        width="120"
-                        height="120"
-                        className="rounded-circle"
+                  <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                      <label htmlFor="productName" className="form-label">
+                        Product Name:
+                      </label>
+                      <input
+                        type="text"
+                        id="productName"
+                        name="productName"
+                        value={addProduct.productName}
+                        onChange={handleChange}
+                        className="form-control"
+                        required
                       />
                     </div>
-                    <div className="col-7">
-                      <p>
-                        <strong>Advertiser:</strong>{" "}
-                        {selectedProduct.advertiser}
-                      </p>
-                      <p>
-                        <strong>Cost:</strong> {selectedProduct.cost}
-                      </p>
-                    </div>
-                  </div>
 
-                  <p>{selectedProduct.description}</p>
-                  <div className="row g-2">
-                    <div className="col-4">
-                      <Link className="btn btn-sm btn-outline-primary w-100">
-                        Add Advert
-                      </Link>
+                    <div className="mb-3">
+                      <label htmlFor="imgUrl" className="form-label">
+                        Image URL:
+                      </label>
+                      <input
+                        type="url"
+                        id="imgUrl"
+                        name="imgUrl"
+                        value={addProduct.imgUrl}
+                        onChange={handleChange}
+                        className="form-control"
+                        required
+                      />
                     </div>
-                    <div className="col-4">
-                      <Link className="btn btn-sm view-btn w-100">Edit</Link>
+
+                    <div className="mb-3">
+                      <label htmlFor="description" className="form-label">
+                        Description:
+                      </label>
+                      <textarea
+                        id="description"
+                        name="description"
+                        value={addProduct.description}
+                        onChange={handleChange}
+                        className="form-control"
+                        rows="3"
+                        required
+                      />
                     </div>
-                    <div className="col-4">
-                      <Link className="btn btn-sm view-btn btn-outline-danger w-100">
-                        Delete
-                      </Link>
+
+                    <div className="mb-3">
+                      <label htmlFor="advertiser" className="form-label">
+                        Advertiser:
+                      </label>
+                      <input
+                        type="text"
+                        id="advertiser"
+                        name="advertiser"
+                        value={addProduct.advertiser}
+                        onChange={handleChange}
+                        className="form-control"
+                        required
+                      />
                     </div>
-                  </div>
+
+                    <div className="mb-3">
+                      <label htmlFor="cost" className="form-label">
+                        Cost:
+                      </label>
+                      <input
+                        type="text"
+                        id="cost"
+                        name="cost"
+                        value={addProduct.cost}
+                        onChange={handleChange}
+                        className="form-control"
+                        required
+                      />
+                    </div>
+
+                    <button type="submit" className="btn btn-primary">
+                      Add Product
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       )}
-      {selectedProduct && (
+      {addingProduct && (
         <div className="modal-backdrop fade show" onClick={closeModal}></div>
       )}
     </div>

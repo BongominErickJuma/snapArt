@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useFetch from "../../../hooks/useFetch";
 
 const ProductDetail = () => {
   const [addingAdvert, setAddingAdvert] = useState(null);
@@ -14,7 +15,6 @@ const ProductDetail = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionMessage, setSubmissionMessage] = useState("");
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setAddAdvert((prevProduct) => ({
@@ -41,34 +41,33 @@ const ProductDetail = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setIsSubmitting(true); // Set loading state
 
-    // Create a FormData object to include the file in the request
     const formData = new FormData();
-    for (const key in addAdvert) {
-      formData.append(key, addAdvert[key]);
-    }
-
-    console.log(`${import.meta.env.VITE_ADD_ADVERT}`);
+    formData.append("businessName", addAdvert.businessName);
+    formData.append("address", addAdvert.address);
+    formData.append("contact", addAdvert.contact);
+    formData.append("about", addAdvert.about);
+    formData.append("websiteUrl", addAdvert.websiteUrl);
+    formData.append("period", addAdvert.period);
+    formData.append("userId", addAdvert.userId);
+    formData.append("file", addAdvert.file);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_ADD_ADVERT}`, {
-        method: "POST",
-        body: formData,
+      const response = await useFetch({
+        url: `${import.meta.env.VITE_ADD_ADVERT}`,
+        options: {
+          method: "POST",
+          body: formData,
+        },
       });
 
-      if (response.ok) {
-        const result = await response.json();
-        setSubmissionMessage("Advertisement submitted successfully!");
-      } else {
-        setSubmissionMessage(
-          "Failed to submit advertisement. Please try again."
-        );
-      }
+      setSubmissionMessage("Advertisement submitted successfully!");
     } catch (error) {
-      setSubmissionMessage("An error occurred. Please try again.");
+      setSubmissionMessage("Failed to submit advertisement. Please try again.");
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false); // End loading state
+      closeModal();
     }
   };
 
@@ -257,11 +256,6 @@ const ProductDetail = () => {
                     >
                       {isSubmitting ? "Submitting..." : "Submit Advertisement"}
                     </button>
-                    {submissionMessage && (
-                      <div className="alert alert-info mt-3" role="alert">
-                        {submissionMessage}
-                      </div>
-                    )}
                   </form>
                 </div>
               </div>
@@ -270,6 +264,12 @@ const ProductDetail = () => {
         )}
         {addingAdvert && (
           <div className="modal-backdrop fade show" onClick={closeModal}></div>
+        )}
+
+        {submissionMessage && (
+          <div className="alert alert-info mt-3" role="alert">
+            {submissionMessage}
+          </div>
         )}
       </div>
     </div>
